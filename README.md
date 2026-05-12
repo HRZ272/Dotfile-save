@@ -1,6 +1,7 @@
 # Dotfile-save 
 
 ![screenshot](screenshot.png)
+![screenshot](screenshot1.png)
 
 ## Про конфиг
 Это мои личные dotfiles под Hyprland.  
