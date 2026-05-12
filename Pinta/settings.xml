@@ -1,0 +1,27 @@
+﻿<settings>
+  <setting name="dock-layers-minimized" type="System.Boolean">False</setting>
+  <setting name="dock-history-minimized" type="System.Boolean">False</setting>
+  <setting name="ruler-metric" type="System.Int32">0</setting>
+  <setting name="color-scheme" type="System.Int32">0</setting>
+  <setting name="window-maximized" type="System.Boolean">True</setting>
+  <setting name="ruler-shown" type="System.Boolean">False</setting>
+  <setting name="image-tabs-shown" type="System.Boolean">True</setting>
+  <setting name="tool-windows-shown" type="System.Boolean">True</setting>
+  <setting name="toolbar-shown" type="System.Boolean">True</setting>
+  <setting name="menubar-shown" type="System.Boolean">False</setting>
+  <setting name="statusbar-shown" type="System.Boolean">True</setting>
+  <setting name="toolbox-shown" type="System.Boolean">True</setting>
+  <setting name="last-dialog-directory" type="System.String">file:///home/horizon/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F</setting>
+  <setting name="last-selected-tool" type="System.String">PaintBrushTool</setting>
+  <setting name="primary-color" type="System.String">FF000000</setting>
+  <setting name="secondary-color" type="System.String">FFFFFFFF</setting>
+  <setting name="recently-used-colors" type="System.String">FFE6E6E6,FFE6E6E6,FFE6E6E6,FFE6E6E6,FFE6E6E6,FFE6E6E6,FFE6E6E6,FFE6E6E6,FFE6E6E6,FFE6E6E6</setting>
+  <setting name="paintbrushtool-antialias" type="System.Int32">0</setting>
+  <setting name="paintbrushtool-brush-width" type="System.Int32">2</setting>
+  <setting name="paint-brush-brush" type="System.Int32">0</setting>
+  <setting name="erasertool-brush-width" type="System.Int32">2</setting>
+  <setting name="color-picker-sample-size" type="System.Int32">0</setting>
+  <setting name="freeformshapetool-brush-width" type="System.Int32">2</setting>
+  <setting name="clonestamptool-brush-width" type="System.Int32">2</setting>
+  <setting name="recolortool-brush-width" type="System.Int32">2</setting>
+</settings>

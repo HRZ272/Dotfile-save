@@ -1,0 +1,79 @@
+/* ── Catppuccin Mocha (Lavender) wofi theme ─────────────────────────────── */
+/* Установка:                                                                   */
+/* ~/.config/waybar/scripts/steam-menu.css                                   */
+/* В waybar config поменяй on-click-right на:                                  */
+/* "~/.config/waybar/scripts/steam-menu.py --style ~/.config/waybar/scripts/steam-menu.css" */
+
+* {
+    font-family: "Segoe UI", "Noto Sans", sans-serif;
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+}
+
+window {
+    background-color: #1e1e2e; /* Base */
+    border: 2px solid #b4befe; /* Lavender */
+    border-radius: 8px;
+}
+
+#outer-box {
+    padding: 8px;
+    background: transparent;
+}
+
+/* Строка поиска / заголовок */
+#input {
+    background-color: #181825; /* Mantle */
+    color: #cdd6f4; /* Text */
+    border: 1px solid #313244; /* Surface0 */
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    caret-color: #b4befe; /* Lavender */
+}
+
+#input:focus {
+    border-color: #b4befe; /* Lavender */
+    box-shadow: 0 0 0 1px rgba(180, 190, 254, 0.4); /* Lavender с прозрачностью */
+}
+
+/* Список */
+#scroll {
+    background: transparent;
+}
+
+#inner-box {
+    background: transparent;
+}
+
+/* Каждый элемент */
+#entry {
+    padding: 7px 12px;
+    border-radius: 5px;
+    color: #cdd6f4; /* Text */
+    background: transparent;
+    transition: background 0.1s;
+}
+
+#entry:hover {
+    background-color: #313244; /* Surface0 */
+    color: #cdd6f4; /* Text */
+}
+
+#entry:selected {
+    background-color: #b4befe; /* Lavender */
+    color: #1e1e2e; /* Base (темный текст на светлом фоне для читаемости) */
+}
+
+#entry:selected #label {
+    color: #1e1e2e; /* Base */
+    font-weight: 600;
+}
+
+#label {
+    color: #cdd6f4; /* Text */
+}
+
+/* Иконки (если есть) */
+#

@@ -1,0 +1,115 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "5af56947851148817c4b2057d55edd0c14aedc0a337bf557bc307bc559d4a2b2",
+    "telemetry.devDeviceId": "edd842e3-6c0c-4a5a-a631-567033af181e",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///run/media/SteamLibrary/steamapps/common/tModLoader"
+            },
+            {
+                "folderUri": "file:///home/horizon/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/17p"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/horizon/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/C%2B%2B": "__default__profile__",
+            "file:///home/horizon/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8": "__default__profile__",
+            "file:///home/horizon/.local/share/anime-game-launcher/Genshin%20Impact": "__default__profile__",
+            "file:///run/media/SteamLibrary/steamapps/common/Ready%20Or%20Not": "__default__profile__",
+            "file:///run/media/War%20Thunder/WT/WarThunder": "__default__profile__",
+            "file:///run/media/SteamLibrary/steamapps/common/Helldivers%202": "__default__profile__",
+            "file:///run/media/SteamLibrary/steamapps/common/tModLoader": "__default__profile__",
+            "file:///home/horizon/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/17p": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/horizon/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/17p",
+            "backupPath": "/home/horizon/.config/VSCodium/Backups/ecb5fca76836fa3ca64b49a6453463ef",
+            "uiState": {
+                "mode": 0,
+                "x": 0,
+                "y": 0,
+                "width": 953,
+                "height": 1032
+            }
+        },
+        "openedWindows": []
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#1f1f1f",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#cccccc",
+            "background": "#1f1f1f",
+            "editorBackground": "#1f1f1f",
+            "titleBarBackground": "#181818",
+            "titleBarBorder": "#2b2b2b",
+            "activityBarBackground": "#181818",
+            "activityBarBorder": "#2b2b2b",
+            "sideBarBackground": "#181818",
+            "sideBarBorder": "#2b2b2b",
+            "statusBarBackground": "#181818",
+            "statusBarBorder": "#2b2b2b",
+            "statusBarNoFolderBackground": "#1f1f1f"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 236,
+            "auxiliaryBarWidth": 0,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 236,
+            "auxiliaryBarWidth": 300,
+            "workspaces": {
+                "51a884d3e4bee0b41d7447d5dbe2799a": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "e840799fec3be945c45e27eaa02bdab9": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "2f1f6b389ba89914baba6bfe93017881": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "d75ddbfd47ca8a219eb673c821177745": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "aadbea8c23b4a249fef7b5cb81c4e56c": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "026d77312cbc214fe2c24b138280e868": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "73940f401bbdf2f83759bdd6c21c6912": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "595cd6f6cb89b02aa8e1cc31959bd5f7": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                }
+            }
+        }
+    }
+}

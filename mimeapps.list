@@ -1,0 +1,7 @@
+[Added Associations]
+video/mp4=mpv-3.desktop;mpv-2.desktop;
+
+[Default Applications]
+video/mp4=mpv-3.desktop;
+application/x-ms-dos-executable;application/x-wine-extension-msp;application/x-msi;application/x-msdos-program;text/win-bat;=PortProton.desktop
+x-scheme-handler/discord=legcord.desktop

@@ -1,0 +1,227 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 3,
+    "margin-top": 4,
+    "margin-left": 8,
+    "margin-right": 8,
+    "smooth-scrolling-threshold": 0.5,
+    
+    // Модули в тех же местах что и были
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/yandex",
+        "image#myicon"
+    ],
+    "modules-center": [
+        "clock",
+        "custom/weather",
+        "hyprland/language"
+    ],
+    "modules-right": [      
+        "idle_inhibitor",
+        "custom/audio-headphones",
+        "custom/audio-speakers",
+        "pulseaudio",
+        "custom/chromium_vol",
+        "cpu",
+        "memory",
+        "temperature",
+        "custom/updates",
+        "tray"
+    ],
+    
+    // ===== КОНФИГУРАЦИЯ МОДУЛЕЙ =====
+    
+"hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "󰲠",
+            "2": "󰲢",
+            "3": "󰲤",
+            "4": "󰲦",
+            "5": "󰲨",
+            "6": "󰲪",
+            "7": "󰲬",
+            "8": "󰲮",
+            "9": "󰲰",
+            "urgent": "",
+            "active": "",
+            "default": "󰝥"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+
+    "custom/yandex": {
+        "format": "󰎈 {}",
+        "exec": "playerctl metadata --format '{{ artist }} - {{ title }}' 2>/dev/null || echo 'Не играет'",
+        "interval": 2,
+        "max-length": 42,
+        "on-click": "~/.config/waybar/scripts/widgetM.sh",
+        "tooltip": true,
+        "tooltip-format": "Яндекс Музыка"
+    },
+    
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%d.%m.%Y}",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#b4befe'><b>{}</b></span>",
+                "days": "<span color='#cdd6f4'><b>{}</b></span>",
+                "weeks": "<span color='#89b4fa'><b>W{}</b></span>",
+                "weekdays": "<span color='#f38ba8'><b>{}</b></span>",
+                "today": "<span color='#f9e2af'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    
+    "custom/weather": {
+        "format": "{}",
+        "tooltip": true,
+        "interval": 1800,
+        "exec": "curl -s 'wttr.in/55.697726,37.321721?format=%c+%t&lang=ru'",
+        "on-click": "xdg-open https://wttr.in/55.697726,37.321721"
+    },
+    
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "EN",
+        "format-ru": "RU"
+    },
+    
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰅶",
+            "deactivated": "󰾪"
+        },
+        "tooltip": true,
+        "tooltip-format-activated": "Idle inhibitor: ON",
+        "tooltip-format-deactivated": "Idle inhibitor: OFF"
+    },
+    
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% 󰂯",
+        "format-bluetooth-muted": "󰝟 󰂯",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+    
+    "cpu": {
+        "format": "{usage}% 󰍛",
+        "interval": 2,
+        "tooltip": true,
+        "tooltip-format": "CPU usage: {usage}%\nFreq: {avg_frequency} GHz"
+    },
+    
+    "memory": {
+        "format": "{}% 󰘚",
+        "interval": 5,
+        "tooltip": true,
+        "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G\nSwap: {swapUsed:0.1f}G / {swapTotal:0.1f}G"
+    },
+    
+    "temperature": {
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-critical": "{temperatureC}°C ",
+        "format-icons": ["󱃃", "󰔏", "󱃂"],
+        "interval": 5
+    },
+    
+    "tray": {
+        "icon-size": 18,
+        "spacing": 8,
+        "show-passive-items": true
+    },
+    
+"custom/audio-switch": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/audio-status.sh",
+    "interval": 2,
+    "on-click": "~/.config/waybar/scripts/audio-switch.sh;",
+    "tooltip": true,
+    "tooltip-format": "Переключить аудио устройство"
+
+},
+"custom/audio-headphones": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/check-headphones.sh",
+    "interval": 2,
+    "on-click": "~/.config/waybar/scripts/audio-headphones.sh",
+    "tooltip": true,
+    "tooltip-format": "Переключить на наушники"
+},
+"custom/audio-speakers": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/check-speakers.sh",
+    "interval": 2,
+    "on-click": "~/.config/waybar/scripts/audio-speakers.sh",
+    "tooltip": true,
+    "tooltip-format": "Переключить на колонки"
+},
+"custom/chromium_vol": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "~/.config/waybar/scripts/chromium_vol.sh status",
+    "on-click": "~/.config/waybar/scripts/chromium_vol.sh mute",
+    "on-scroll-up": "~/.config/waybar/scripts/chromium_vol.sh up",
+    "on-scroll-down": "~/.config/waybar/scripts/chromium_vol.sh down",
+    "interval": 1,
+    "tooltip": true
+},
+"image#myicon": {
+    "path": "/home/horizon/akulka.png",
+    "size": 30,
+    "interval": 60,
+    "on-click": "xdg-open https://ru.pinterest.com/search/pins/?q=ellen%20joe&rs=rs&source_id=rs_Jqdxn1oH&eq=e&etslf=3662",
+    "on-click-right": "kitty btop",
+    "on-click-middle": "/run/media/War\\ Thunder/WarThunder/launcher"
+},
+"custom/updates": {
+    "format": "<span size='10000'>#custom-updates {
+    /* ... твои старые стили ... */
+    
+    font-size: 14px;    /* Попробуй чуть уменьшить общий шрифт модуля */
+    line-height: 1;     /* Убирает лишние отступы сверху и снизу текста */
+    min-height: 0;      /* Разрешает модулю быть меньше стандартного */
+    padding: 0 10px;    /* Минимальный вертикальный паддинг */
+}</span>  {}",
+    "interval": 3600,                     // Проверять раз в час
+    "exec": "checkupdates | wc -l",       // Считает количество строк (пакетов)
+    "exec-if": "exit 0",                  // Всегда запускать
+    "on-click": "kitty -e sudo pacman -Syu", // По клику открывает терминал и обновляет
+    "signal": 8                           // Чтобы можно было обновить вручную
+}
+
+}

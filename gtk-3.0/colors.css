@@ -1,0 +1,16 @@
+/* /home/horizon/.config/gtk-3.0/colors.css */
+
+@define-color bg-deep #181825;
+@define-color bg-soft #1e1e2e;
+@define-color bg-surface #313244;
+
+@define-color fg-main #cdd6f4;
+@define-color fg-dim #bac2de;
+
+@define-color accent #cba6f7;
+@define-color accent-dim #94e2d5;
+@define-color accent-warm #f5c2e7;
+
+@define-color border #45475a;
+@define-color selection #585b70;
+@define-color error #f38ba8;

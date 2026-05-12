@@ -1,0 +1,10 @@
+{
+  "preferences": {
+    "floatingAtollActive": true,
+    "coworkWebSearchEnabled": true,
+    "ccdScheduledTasksEnabled": false,
+    "coworkScheduledTasksEnabled": false,
+    "menuBarEnabled": false,
+    "sidebarMode": "chat"
+  }
+}

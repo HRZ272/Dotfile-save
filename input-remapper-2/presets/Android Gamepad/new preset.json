@@ -1,0 +1,197 @@
+[
+    {
+        "input_combination": [
+            {
+                "type": 3,
+                "code": 1,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb",
+                "analog_threshold": -1
+            }
+        ],
+        "target_uinput": "gamepad",
+        "output_symbol": "",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 3,
+                "code": 1,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb",
+                "analog_threshold": 1
+            }
+        ],
+        "target_uinput": "gamepad"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 3,
+                "code": 0,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb",
+                "analog_threshold": -1
+            }
+        ],
+        "target_uinput": "gamepad"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 3,
+                "code": 0,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb",
+                "analog_threshold": 1
+            }
+        ],
+        "target_uinput": "gamepad"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 3,
+                "code": 17,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb",
+                "analog_threshold": -1
+            }
+        ],
+        "target_uinput": "gamepad"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 3,
+                "code": 16,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb",
+                "analog_threshold": -1
+            }
+        ],
+        "target_uinput": "gamepad"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 3,
+                "code": 17,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb",
+                "analog_threshold": 1
+            }
+        ],
+        "target_uinput": "gamepad",
+        "mapping_type": "key_macro"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 3,
+                "code": 16,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb",
+                "analog_threshold": 1
+            }
+        ],
+        "target_uinput": "gamepad"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 312,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb"
+            },
+            {
+                "type": 3,
+                "code": 10,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb",
+                "analog_threshold": 1
+            }
+        ],
+        "target_uinput": "gamepad",
+        "name": "Button TL2"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 313,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb"
+            },
+            {
+                "type": 3,
+                "code": 9,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb",
+                "analog_threshold": 1
+            }
+        ],
+        "target_uinput": "gamepad",
+        "name": "Button TR2"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 310,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb"
+            }
+        ],
+        "target_uinput": "gamepad"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 311,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb"
+            }
+        ],
+        "target_uinput": "gamepad"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 315,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb"
+            }
+        ],
+        "target_uinput": "gamepad"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 314,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb"
+            },
+            {
+                "type": 1,
+                "code": 158,
+                "origin_hash": "dab63871f5c8ec64a0c157a05e683d22"
+            }
+        ],
+        "target_uinput": "gamepad"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 316,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb"
+            },
+            {
+                "type": 1,
+                "code": 172,
+                "origin_hash": "dab63871f5c8ec64a0c157a05e683d22"
+            }
+        ],
+        "target_uinput": "gamepad"
+    },
+    {
+        "input_combination": [
+            {
+                "type": 1,
+                "code": 308,
+                "origin_hash": "f6023e7b747f325742055159ca27d1cb"
+            }
+        ],
+        "target_uinput": "keyboard"
+    }
+]

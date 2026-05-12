@@ -1,0 +1,39 @@
+/* Catppuccin Mocha — theme.css для swaync */
+
+* {
+  /* Размеры иконок */
+  --notification-icon-size: 48px;
+  --notification-app-icon-size: 24px;
+  --notification-group-icon-size: 24px;
+  --mpris-album-art-icon-size: 64px;
+  --widget-volume-row-icon-size: 22px;
+
+  /* Текст */
+  --text-color: #cdd6f4;              /* Catppuccin: text */
+  --text-color-disabled: #585b70;     /* Catppuccin: surface2 */
+
+  /* Фон notification center */
+  --cc-bg: rgba(24, 24, 37, 0.45);                   /* Catppuccin: mantle */
+
+  /* Фон уведомлений (в rgb для rgba()) */
+  --noti-bg: 49, 50, 68;             /* Catppuccin: surface0 #313244 */
+  --noti-bg-alpha: 0.35;
+
+  --noti-bg-hover: rgba(69, 71, 90, 0.5);    /* hover чуть плотнее */
+  --noti-bg-focus: rgba(49, 50, 68, 0.3);
+  --noti-bg-darker: rgba(17, 17, 27, 0.5);
+  --noti-bg-alt: rgba(30, 30, 46, 0.4);
+
+  /* Бордеры */
+  --noti-border-color: #45475a;       /* Catppuccin: surface1 */
+
+  /* Кнопка закрытия */
+  --noti-close-bg: #313244;           /* surface0 */
+  --noti-close-bg-hover: #cba6f7;     /* Catppuccin: mauve (фиолетовый акцент) */
+
+  /* Выделение (DND switch и т.д.) */
+  --bg-selected: #b4befe;             /* Catppuccin: lavender */
+
+  /* MPRIS кнопки */
+  --mpris-button-hover: rgba(203, 166, 247, 0.2); /* mauve прозрачный */
+}

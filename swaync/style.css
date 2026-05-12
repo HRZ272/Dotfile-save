@@ -1,0 +1,382 @@
+@import "theme.css";
+
+.close-button {
+  background: var(--noti-close-bg);
+  color: var(--text-color);
+  text-shadow: none;
+  padding: 0;
+  border-radius: 100%;
+  margin: 8px 8px 0 0;
+  box-shadow: none;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: var(--noti-close-bg-hover);
+  transition: background 0.15s ease-in-out;
+  border: none;
+}
+
+.notification-row {
+  background: none;
+  outline: none;
+}
+
+.notification-row:focus {
+  background: var(--noti-bg-focus);
+}
+
+.notification-row .notification-background {
+  padding: 5px 7px;
+}
+
+.notification-row .notification {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.notification-default-action {
+  padding: 4px;
+  margin: 0;
+  box-shadow: none;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  transition: background 0.15s ease-in-out;
+  border-radius: 12px;
+}
+
+.notification-default-action:hover {
+  -gtk-icon-filter: none;
+  background: var(--noti-bg-hover);
+}
+
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.notification-content {
+  background: transparent;
+  border-radius: 12px;
+  padding: 0;
+}
+
+.notification-content .image {
+  -gtk-icon-filter: none;
+  -gtk-icon-size: var(--notification-icon-size);
+  border-radius: 100px;
+  margin: 4px;
+}
+
+.notification-content .app-icon {
+  -gtk-icon-filter: none;
+  -gtk-icon-size: var(--notification-app-icon-size);
+  -gtk-icon-shadow: 0 1px 4px black;
+  margin: 6px;
+}
+
+.text-box {
+  padding: 4px 6px;
+}
+
+.text-box label {
+  filter: none;
+}
+
+.text-box .summary,
+.text-box .time,
+.text-box .body {
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  color: var(--text-color);
+  text-shadow: none;
+}
+
+.text-box .time {
+  margin-right: 30px;
+}
+
+.text-box .body {
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.notification-content progressbar,
+.notification-content .body-image,
+.notification-content .inline-reply {
+  margin-top: 4px;
+}
+
+.body-image {
+  background-color: white;
+  -gtk-icon-filter: none;
+}
+
+.inline-reply-entry {
+  background: var(--noti-bg-darker);
+  color: var(--text-color);
+  caret-color: var(--text-color);
+  border: 1px solid var(--noti-border-color);
+  border-radius: 12px;
+}
+
+.inline-reply-button {
+  margin-left: 4px;
+  background: rgba(var(--noti-bg), var(--noti-bg-alpha));
+  border: 1px solid var(--noti-border-color);
+  border-radius: 12px;
+  color: var(--text-color);
+}
+
+.inline-reply-button:disabled {
+  background: initial;
+  color: var(--text-color-disabled);
+  border-color: transparent;
+}
+
+.inline-reply-button:hover {
+  background: var(--noti-bg-hover);
+}
+
+.notification-alt-actions {
+  background: none;
+  border-radius: 0 0 12px 12px;
+  padding: 4px;
+}
+
+.notification-action {
+  margin: 4px;
+  padding: 0;
+}
+
+.notification-action > button {
+  border-radius: 12px;
+}
+
+.notification-group {
+  transition: opacity 200ms ease-in-out;
+}
+
+.notification-group:focus {
+  background: var(--noti-bg-focus);
+}
+
+.notification-group-close-button .close-button {
+  margin: 12px 20px;
+}
+
+.notification-group-buttons,
+.notification-group-headers {
+  margin: 0 16px;
+  color: var(--text-color);
+}
+
+.notification-group-icon {
+  color: var(--text-color);
+  -gtk-icon-size: var(--notification-group-icon-size);
+}
+
+.notification-group-header {
+  color: var(--text-color);
+}
+
+.notification-group.collapsed.not-expanded {
+  opacity: 0.4;
+}
+
+.notification-group.collapsed .notification {
+  background-color: rgba(var(--noti-bg), 1);
+}
+
+.notification-group.collapsed
+  .notification-row:not(:last-child)
+  .notification-action,
+.notification-group.collapsed
+  .notification-row:not(:last-child)
+  .notification-default-action {
+  opacity: 0;
+}
+
+.notification-group.collapsed:hover
+  .notification-row:not(:only-child)
+  .notification {
+  background-color: var(--noti-bg-hover);
+}
+
+.control-center {
+  background: var(0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.control-center-list-placeholder {
+  opacity: 0.5;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.control-center .notification {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.7),
+    0 2px 6px 2px rgba(0, 0, 0, 0.3);
+}
+
+.control-center .notification-default-action,
+.control-center .notification-action {
+  transition: opacity 400ms ease-in-out, background 0.15s ease-in-out;
+}
+
+.control-center .notification-default-action:hover,
+.control-center .notification-action:hover {
+  background-color: var(--noti-bg-hover);
+}
+
+.blank-window,
+.floating-notifications {
+  background: transparent;
+}
+
+.floating-notifications .notification {
+  box-shadow: none;
+}
+
+/*** Widgets ***/
+.widget-title > label,
+.widget-dnd label,
+.widget-label > label,
+.widget-inhibitors > label {
+  margin: 8px;
+  font-size: 1.1rem;
+}
+
+.widget-title > label,
+.widget-inhibitors > label {
+  font-size: 1.5rem;
+}
+
+.widget-title > button,
+.widget-inhibitors > button {
+  margin: 8px;
+  border-radius: 12px;
+}
+
+.widget-dnd switch {
+  border-radius: 12px;
+  margin: 8px;
+}
+
+.widget-dnd switch:checked {
+  background-color: var(--bg-selected);
+}
+
+.widget-dnd switch slider {
+  border-radius: 12px;
+}
+
+.widget-label {
+  margin: 8px;
+}
+
+.widget-mpris {
+  margin: 8px;
+}
+
+.widget-mpris-player {
+  margin: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+}
+
+.widget-mpris-player .mpris-background {
+  filter: blur(10px);
+}
+
+.widget-mpris-player .mpris-overlay {
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.widget-mpris-player .mpris-overlay button:hover {
+  background: var(--noti-bg-hover);
+}
+
+.widget-mpris-album-art {
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+  -gtk-icon-size: var(--mpris-album-art-icon-size);
+}
+
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.widget-mpris-subtitle {
+  font-size: 1.1rem;
+}
+
+.mpris-overlay > box > button:hover {
+  background-color: var(--mpris-button-hover);
+}
+
+.widget-buttons-grid {
+  padding: 8px;
+  margin: 8px;
+  border-radius: 12px;
+}
+
+.widget-buttons-grid flowboxchild > button {
+  border-radius: 12px;
+}
+
+.menu-button-bar > .start {
+  margin-left: 8px;
+}
+
+.menu-button-bar > .end {
+  margin-right: 8px;
+}
+
+.widget-menubar-container button {
+  border-radius: 12px;
+  margin: 0 4px;
+}
+
+.widget-menubar > revealer {
+  margin-top: 8px;
+}
+
+.widget-menubar > revealer button {
+  border-radius: 12px;
+  margin: 8px;
+  margin-top: 0;
+}
+
+.widget-volume,
+.widget-slider,
+.widget-backlight {
+  padding: 8px;
+  margin: 8px;
+  border-radius: 12px;
+}
+
+.widget-volume row image {
+  -gtk-icon-size: var(--widget-volume-row-icon-size);
+}
+
+.per-app-volume {
+  background-color: var(--noti-bg-alt);
+  padding: 4px 8px 8px 8px;
+  margin: 0px 8px 8px 8px;
+  border-radius: 12px;
+}
+
+.widget-slider label {
+  font-size: inherit;
+}

@@ -1,0 +1,3 @@
+function lc --wraps='=legcord --enable-features=UseOzonePlatform --ozone-platform=wayland --proxy-server=socks5://127.0.0.1:9050 --force-webrtc-ip-handling-policy=disable_non_proxied_udp' --wraps='legcord --enable-features=UseOzonePlatform --ozone-platform=wayland --proxy-server=socks5://127.0.0.1:9050 --force-webrtc-ip-handling-policy=disable_non_proxied_udp' --description 'alias lc=legcord --enable-features=UseOzonePlatform --ozone-platform=wayland --proxy-server=socks5://127.0.0.1:9050 --force-webrtc-ip-handling-policy=disable_non_proxied_udp'
+    legcord --enable-features=UseOzonePlatform --ozone-platform=wayland --proxy-server=socks5://127.0.0.1:9050 --force-webrtc-ip-handling-policy=disable_non_proxied_udp $argv
+end
