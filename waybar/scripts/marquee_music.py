@@ -48,7 +48,7 @@ def main():
         status = run('playerctl', 'status')
 
         if status not in ('Playing', 'Paused'):
-            output('󰎈 ничего не играет')
+            output('󰎈 Ничего не играет')
             time.sleep(2)
             continue
 

@@ -28,6 +28,11 @@ ANIM_MS     = int(1000 / ANIM_FPS)
 ANIM_DUR    = 0.45
 ANIM_FRAMES = int(ANIM_DUR * ANIM_FPS)
 
+MARQUEE_MAX  = 22          # символов — после этого включается прокрутка
+MARQUEE_GAP  = '   ·   '  # разделитель между повторениями
+MARQUEE_MS   = 190         # мс на один шаг (скорость прокрутки)
+MARQUEE_HOLD = 12          # шагов «держать» перед началом прокрутки
+
 
 # ─────────────────────────────────────────────
 #  Easing
@@ -193,9 +198,14 @@ class MusicPopup(Gtk.Window):
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
 
-        self._seek_dragging = False
-        self._duration      = 0.0
-        self._wave_phase    = 0.0   # фаза волны
+        self._seek_dragging  = False
+        self._duration       = 0.0
+        self._wave_phase     = 0.0   # фаза волны
+
+        self._marquee_text   = ''    # полная строка + разделитель
+        self._marquee_offset = 0     # текущий символ
+        self._marquee_hold   = 0     # счётчик паузы в начале
+        self._marquee_timer  = None
 
         self._build_ui()
         self._load_track()
@@ -316,6 +326,48 @@ class MusicPopup(Gtk.Window):
         self.lbl_dur.set_halign(Gtk.Align.END)
         time_row.pack_end(self.lbl_dur, False, False, 0)
     
+    # ── Бегущая строка (marquee) ──────────────
+
+    def _set_title(self, text):
+        """Устанавливает заголовок: если длинный — запускает прокрутку."""
+        # останавливаем старый таймер
+        if self._marquee_timer is not None:
+            GLib.source_remove(self._marquee_timer)
+            self._marquee_timer = None
+
+        if len(text) <= MARQUEE_MAX:
+            self.lbl_title.set_text(text)
+            return
+
+        # готовим бесконечную циклическую строку
+        self._marquee_text   = text + MARQUEE_GAP
+        self._marquee_offset = 0
+        self._marquee_hold   = MARQUEE_HOLD
+        # показываем начало сразу
+        self.lbl_title.set_text(self._marquee_text[:MARQUEE_MAX])
+        self._marquee_timer  = GLib.timeout_add(MARQUEE_MS, self._marquee_tick)
+
+    def _marquee_tick(self):
+        # пауза в начале (как у настоящего табло)
+        if self._marquee_hold > 0:
+            self._marquee_hold -= 1
+            return True
+
+        full = self._marquee_text
+        n    = len(full)
+        i    = self._marquee_offset
+        # берём MARQUEE_MAX символов циклически
+        chunk = (full + full)[i : i + MARQUEE_MAX]
+        self.lbl_title.set_text(chunk)
+
+        self._marquee_offset = (i + 1) % n
+        # когда сделали полный круг — снова держим паузу
+        if self._marquee_offset == 0:
+            self._marquee_hold = MARQUEE_HOLD
+        return True
+
+    # ── Волна ─────────────────────────────────
+
     def _wave_tick(self):
         self._wave_phase += 0.04
         if self.wave_area.get_window():
@@ -406,7 +458,7 @@ class MusicPopup(Gtk.Window):
         self._duration = get_duration()
         pos            = get_position()
 
-        self.lbl_title.set_text(title  or 'Неизвестный трек')
+        self._set_title(title or 'Неизвестный трек')
         self.lbl_artist.set_text(artist or 'Неизвестный исполнитель')
         self.btn_play.set_label('⏸' if status == 'Playing' else '▶')
 

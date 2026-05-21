@@ -20,3 +20,36 @@ copyq/
 copyq/
 copyq/
 Happ/
+# Cache
+*/Cache/
+*/GPUCache/
+*/CachedData/
+*/Code Cache/
+*/DawnCache/
+*/DawnGraphiteCache/
+*/DawnWebGPUCache/
+
+# Logs
+*.log
+*.tmp
+LOG
+LOG.old
+
+# VSCodium trash/cache
+VSCodium/CachedExtensionVSIXs/.trash/
+VSCodium/User/workspaceStorage/
+VSCodium/Local Storage/
+VSCodium/Session Storage/
+VSCodium/Service Worker/
+
+# LibreOffice junk
+libreoffice/4/cache/
+libreoffice/4/user/extensions/
+
+# Browser/app junk
+zoom/
+wireshark/
+
+# Temporary
+cache/
+tmp/

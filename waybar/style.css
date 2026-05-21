@@ -39,6 +39,7 @@ window#waybar {
 #custom-chromium_vol,
 #pulseaudio,
 #custom-txt,
+#custom-colorpicker,
 #cpu,
 #memory,
 #temperature,
@@ -59,6 +60,7 @@ window#waybar {
 #custom-amnezia:hover,
 #custom-yandex:hover,
 #clock:hover,
+#custom-colorpicker:hover,
 #custom-steam:hover,
 #custom-weather:hover,
 #language:hover,
@@ -87,16 +89,16 @@ window#waybar {
     padding: 0 10px;
     margin: 0;
     background: transparent;
-    color: #45475a;
+    color: #b4befe;        
     border: none;
+    box-shadow: none;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
 
-#workspaces button:hover {
-    background: rgba(180, 190, 254, 0.15);
-    color: #b4befe;
-    box-shadow: none;
+#workspaces button.empty {
+    color: #45475a;        
+    background: transparent;
 }
 
 #workspaces button.active {
@@ -105,12 +107,6 @@ window#waybar {
     font-weight: 700;
     box-shadow: 0 0 12px rgba(180, 190, 254, 0.4);
     border-radius: 10px;
-}
-
-#workspaces button.urgent {
-    background: linear-gradient(135deg, #f38ba8 0%, #eba0ac 100%);
-    color: #1e1e2e;
-    animation: urgent-blink 1s ease-in-out infinite alternate;
 }
 
 @keyframes urgent-blink {
@@ -343,8 +339,10 @@ tooltip label {
     color: #cdd6f4;
 }
 #workspaces button.occupied {
-    color: #b4befe;
-    background: rgba(180, 190, 254, 0.2);
+    color: #cdd6f4;
+    background: rgba(180, 190, 254, 0.12);
+    border-bottom: 2px solid #b4befe;
+    border-radius: 10px 10px 6px 6px;
 }
 #custom-audio-switch {
     color: #89dceb;
@@ -512,12 +510,9 @@ tooltip label {
      border-color: #b4befe;
      box-shadow: 0 0 20px rgba(180, 190, 254, 0.6);
 }
-/* ── Добавь в самый конец своего style.css ──────────────────────────────── */
 
-/* Подтягивает tray-state.css который скрипт меняет на лету */
 @import url("/home/horizon/.config/waybar/tray-state.css");
 
-/* Кнопка-стрелка тоггла трея */
 #custom-tray-toggle {
     color: #6c7086;
     background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
@@ -537,7 +532,6 @@ tooltip label {
     box-shadow: 0 0 16px rgba(180, 190, 254, 0.3);
 }
 
-/* Трей когда открыт — скругление стыкуется с кнопкой */
 #tray {
     background: linear-gradient(135deg, #313244 0%, #262637 100%);
     border: 2px solid #45475a;
@@ -591,4 +585,32 @@ tooltip label {
     color: #1e1e2e;
     border-color: #b4befe;
     box-shadow: 0 0 20px rgba(180, 190, 254, 0.6);
+}
+#custom-colorpicker {
+    color: #cba6f7;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    border-radius: 12px;
+    margin: 2px 2px;
+    padding: 0 11px 0 9px;
+}
+#custom-colorpicker:hover {
+    background: linear-gradient(135deg, #cba6f7 0%, #b4befe 100%);
+    color: #1e1e2e;
+    border-color: #cba6f7;
+}
+#custom-brightness {
+    color: #f9e2af;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    border-radius: 12px;
+    padding: 0 10px;
+    margin: 2px 0 2px 2px;
+    font-size: 16px;
+}
+#custom-brightness:hover {
+    background: linear-gradient(135deg, #f9e2af 0%, #fab387 100%);
+    color: #1e1e2e;
+    border-color: #f9e2af;
+    box-shadow: 0 0 16px rgba(249, 226, 175, 0.4);
 }

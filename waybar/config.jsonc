@@ -13,8 +13,9 @@
     "modules-left": [
         "hyprland/workspaces",
         "custom/yandex",
-        "image#myicon",
-        "custom/text"
+        "tray",
+        "custom/colorpicker",
+        "image#myicon"
     ],
     "modules-center": [
         "custom/weather",
@@ -25,11 +26,12 @@
         "idle_inhibitor",
         "custom/audio-headphones",
         "custom/audio-speakers",
+        "custom/brightness",
         "pulseaudio",
         "custom/chromium_vol",
         "custom/surge",
+        "custom/text",
         "custom/updates",
-        "custom/steam",
         "custom/txt",
         "custom/power"
     ],
@@ -106,7 +108,7 @@
     },
     
     "pulseaudio": {
-        "scroll-step": 1,
+        "scroll-step": 5,
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% 󰂯",
         "format-bluetooth-muted": "󰝟 󰂯",
@@ -189,11 +191,11 @@
 },
 "custom/updates": {
     "format": "{} 󰇚",
-    "interval": 3600,                     // Проверять раз в час
-    "exec": "checkupdates | wc -l",       // Считает количество строк (пакетов)
-    "exec-if": "exit 0",                  // Всегда запускать
-    "on-click": "kitty -e sudo pacman -Syu", // По клику открывает терминал и обновляет
-    "signal": 8                           // Чтобы можно было обновить вручную
+    "interval": 3600,                     
+    "exec": "checkupdates | wc -l",
+    "exec-if": "exit 0",                  
+    "on-click": "kitty --title update -e sudo pacman -Syu", 
+    "signal": 8                           
 },
 "custom/temps": {
     "exec": "~/.config/waybar/scripts/temps.sh",
@@ -295,6 +297,20 @@
     "format": "TOR",
     "on-click": "pkexec systemctl start tor",
     "on-click-right": "pkexec systemctl stop tor", 
+    "tooltip": false
+},
+"custom/colorpicker": {
+    "format": "󰈋",
+    "on-click": "hyprpicker -a",
+    "tooltip": false
+},
+"custom/brightness": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": "once",
+    "exec": "~/.config/waybar/scripts/brightness.sh",
+    "on-click": "~/.config/waybar/scripts/brightness.sh toggle",
+    "signal": 9,
     "tooltip": false
 }
 
