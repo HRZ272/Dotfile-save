@@ -35,10 +35,10 @@
       "toggle-action-panel": "control+A"
    },
    "favorites": [
+      "applications:discord",
       "applications:legcord",
       "applications:AmneziaVPN",
       "applications:start-tor-browser",
-      "applications:obsidian",
       "applications:org.telegram",
       "applications:steam",
       "@dagimg-dot/store.vicinae.player-pilot:player-pilot",

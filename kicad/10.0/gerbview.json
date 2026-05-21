@@ -89,15 +89,15 @@
   "system": {
     "drill_file_history": [],
     "file_history": [
-      "/home/horizon/Загрузки/Diploma/курсач/курсач-B_Silkscreen.gbr",
-      "/home/horizon/Загрузки/Diploma/курсач/курсач-F_Mask.gbr",
-      "/home/horizon/Загрузки/Diploma/курсач/курсач-B_Mask.gbr",
-      "/home/horizon/Загрузки/Diploma/курсач/курсач-Edge_Cuts.gbr",
-      "/home/horizon/Загрузки/Diploma/курсач/курсач-F_Silkscreen.gbr",
-      "/home/horizon/Загрузки/Diploma/курсач/курсач-B_Paste.gbr",
-      "/home/horizon/Загрузки/Diploma/курсач/курсач-B_Cu.gbr",
-      "/home/horizon/Загрузки/Diploma/курсач/курсач-F_Paste.gbr",
-      "/home/horizon/Загрузки/Diploma/курсач/курсач-F_Cu.gbr"
+      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ-F_Silkscreen.gbr",
+      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ-F_Paste.gbr",
+      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ-F_Mask.gbr",
+      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ-F_Cu.gbr",
+      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ-Edge_Cuts.gbr",
+      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ-B_Silkscreen.gbr",
+      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ-B_Paste.gbr",
+      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ-B_Mask.gbr",
+      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ-B_Cu.gbr"
     ],
     "first_run_shown": false,
     "job_file_history": [],
@@ -252,8 +252,8 @@
       "user_grid_y": ""
     },
     "maximized": true,
-    "mru_path": "/home/horizon/Загрузки/Diploma/курсач",
-    "perspective": "layout2|name=TopMainToolbar;caption=;state=139632;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=626;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=TopAuxToolbar;caption=;state=139632;dir=1;layer=4;row=0;pos=0;prop=100000;bestw=1452;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LeftToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=34;besth=572;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayersManager;caption=Менеджер слоёв;state=1532;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=364;besth=32;minw=364;minh=32;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=364;floath=32|name=DrawFrame;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=400;besth=188;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=38|dock_size(1,4,0)=38|dock_size(3,6,0)=38|dock_size(4,3,0)=34|dock_size(2,3,0)=364|dock_size(5,0,0)=384|",
+    "mru_path": "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ",
+    "perspective": "layout2|name=TopMainToolbar;caption=;state=139632;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=626;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=TopAuxToolbar;caption=;state=139632;dir=1;layer=4;row=0;pos=0;prop=100000;bestw=1452;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LeftToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=34;besth=572;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayersManager;caption=Менеджер слоёв;state=1532;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=337;besth=32;minw=337;minh=32;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=337;floath=32|name=DrawFrame;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=400;besth=188;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(1,6,0)=38|dock_size(1,4,0)=38|dock_size(3,6,0)=38|dock_size(4,3,0)=34|dock_size(2,3,0)=337|dock_size(5,0,0)=285|",
     "pos_x": 0,
     "pos_y": 0,
     "size_x": 953,

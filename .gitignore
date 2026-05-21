@@ -16,11 +16,13 @@ dconf/
 Claude/
 Claude-3p/
 copyq/
-copyq/
-copyq/
-copyq/
 Happ/
-# Cache
+zoom/
+wireshark/
+
+cache/
+tmp/
+
 */Cache/
 */GPUCache/
 */CachedData/
@@ -29,27 +31,57 @@ Happ/
 */DawnGraphiteCache/
 */DawnWebGPUCache/
 
-# Logs
 *.log
 *.tmp
+*.bak
 LOG
 LOG.old
 
-# VSCodium trash/cache
-VSCodium/CachedExtensionVSIXs/.trash/
-VSCodium/User/workspaceStorage/
-VSCodium/Local Storage/
-VSCodium/Session Storage/
+VSCodium/Cache/
+VSCodium/CachedData/
+VSCodium/Code Cache/
+VSCodium/DawnCache/
+VSCodium/DawnGraphiteCache/
+VSCodium/DawnWebGPUCache/
+VSCodium/GPUCache/
 VSCodium/Service Worker/
+VSCodium/Session Storage/
+VSCodium/Local Storage/
+VSCodium/User/workspaceStorage/
+VSCodium/CachedExtensionVSIXs/.trash/
 
-# LibreOffice junk
 libreoffice/4/cache/
 libreoffice/4/user/extensions/
 
-# Browser/app junk
-zoom/
-wireshark/
+thumbnails/
+Trash/
+RecentlyUsed.xbel
 
-# Temporary
-cache/
-tmp/
+xarchiver/
+xfce4/
+electron/
+pulse/
+pipewire/
+wireplumber/
+
+qt5ct/qss/
+QtProject.conf
+
+fish/fish_history
+
+npm/
+yarn/
+pnpm/
+
+paru/clone/
+yay/
+
+.jetbrains/
+.idea/
+
+steam/
+Steam/
+
+mpv/watch_later/
+
+gtk-2.0/.gtkrc-2.0-kde4

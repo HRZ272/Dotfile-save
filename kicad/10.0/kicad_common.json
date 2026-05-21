@@ -16,7 +16,9 @@
   },
   "auto_backup": {
     "enabled": true,
-    "limit_total_size": 104857600
+    "format": 1,
+    "limit_total_size": 104857600,
+    "location": 0
   },
   "dialog": {
     "controls": {
@@ -518,23 +520,23 @@
       },
       "Свойства дорожек и перех. отв.": {
         "__geometry": {
-          "h": 915,
-          "w": 1368,
+          "h": 354,
+          "w": 1367,
           "x": 0,
           "y": 0
         },
         "wxStaticBox_0wxCheckBox_0": true,
         "wxStaticBox_0wxCheckBox_1": false,
-        "wxStaticBox_0wxComboCtrl_0": "Net-(DA3-Pad11)",
+        "wxStaticBox_0wxComboCtrl_0": "F",
         "wxStaticBox_0wxComboCtrl_0wxPopupTransientWindow_0wxPanel_0wxTextCtrl_0": "",
         "wxStaticBox_1wxBitmapComboBox_0": "B.Cu",
         "wxStaticBox_1wxCheckBox_0": false,
         "wxStaticBox_1wxChoice_0": -1,
-        "wxStaticBox_1wxTextCtrl_0": 81950000,
-        "wxStaticBox_1wxTextCtrl_1": 122950000,
-        "wxStaticBox_1wxTextCtrl_2": 86266720,
-        "wxStaticBox_1wxTextCtrl_3": 122950000,
-        "wxStaticBox_1wxTextCtrl_4": 250000,
+        "wxStaticBox_1wxTextCtrl_0": 94230000,
+        "wxStaticBox_1wxTextCtrl_1": 101980000,
+        "wxStaticBox_1wxTextCtrl_2": 93440000,
+        "wxStaticBox_1wxTextCtrl_3": 101190000,
+        "wxStaticBox_1wxTextCtrl_4": 200000,
         "wxStaticBox_1wxTextCtrl_5": 0,
         "wxStaticBox_2wxBitmapComboBox_0": "F.Cu",
         "wxStaticBox_2wxBitmapComboBox_1": "B.Cu",
@@ -545,7 +547,7 @@
         "wxStaticBox_2wxCheckBox_2": false,
         "wxStaticBox_2wxChoice_0": -1,
         "wxStaticBox_2wxChoice_1": 0,
-        "wxStaticBox_2wxChoice_2": 0,
+        "wxStaticBox_2wxChoice_2": -1,
         "wxStaticBox_2wxChoice_3": 0,
         "wxStaticBox_2wxChoice_4": 0,
         "wxStaticBox_2wxChoice_5": 0,
@@ -564,7 +566,7 @@
         "wxStaticBox_2wxTextCtrl_4": 0,
         "wxStaticBox_2wxTextCtrl_5": 0,
         "wxStaticBox_2wxTextCtrl_6": 0,
-        "wxStaticBox_2wxTextCtrl_7": "",
+        "wxStaticBox_2wxTextCtrl_7": "0",
         "wxStaticBox_2wxTextCtrl_8": 0,
         "wxStaticBox_2wxTextCtrl_9": 0
       },
@@ -650,7 +652,7 @@
       "Свойства медной зоны": {
         "__geometry": {
           "h": 565,
-          "w": 786,
+          "w": 843,
           "x": 0,
           "y": 0
         },
@@ -659,7 +661,7 @@
         "wxPanel_0wxChoice_1": 1,
         "wxPanel_0wxComboCtrl_0": "GND",
         "wxPanel_0wxComboCtrl_0wxPopupTransientWindow_0wxPanel_0wxTextCtrl_0": "",
-        "wxPanel_0wxNotebook_0": "Hatched Fill",
+        "wxPanel_0wxNotebook_0": "Зазоры и соединения конт. пл.",
         "wxPanel_0wxNotebook_0wxPanel_0wxChoice_0": 1,
         "wxPanel_0wxNotebook_0wxPanel_0wxTextCtrl_0": 500000,
         "wxPanel_0wxNotebook_0wxPanel_0wxTextCtrl_1": 250000,
@@ -711,8 +713,8 @@
         "wxNotebook_0wxPanel_0wxStaticBox_1wxCheckBox_0": false,
         "wxNotebook_0wxPanel_0wxStaticBox_1wxChoice_0": 0,
         "wxNotebook_0wxPanel_0wxStaticBox_1wxComboBox_0": "0",
-        "wxNotebook_0wxPanel_0wxStaticBox_1wxTextCtrl_0": 70912500,
-        "wxNotebook_0wxPanel_0wxStaticBox_1wxTextCtrl_1": 105150000,
+        "wxNotebook_0wxPanel_0wxStaticBox_1wxTextCtrl_0": 90717500,
+        "wxNotebook_0wxPanel_0wxStaticBox_1wxTextCtrl_1": 129240000,
         "wxNotebook_0wxPanel_0wxStaticBox_2wxCheckBox_0": false,
         "wxNotebook_0wxPanel_0wxStaticBox_2wxCheckBox_1": false,
         "wxNotebook_0wxPanel_0wxStaticBox_2wxCheckBox_2": false,
@@ -738,7 +740,7 @@
         "wxNotebook_0wxPanel_3wxSplitterWindow_0wxPanel_1wxPanel_0wxStaticBox_2wxTextCtrl_0": "0,000000 mm",
         "wxNotebook_0wxPanel_3wxSplitterWindow_0wxPanel_1wxPanel_0wxStaticBox_2wxTextCtrl_1": "0,000000 mm",
         "wxNotebook_0wxPanel_3wxSplitterWindow_0wxPanel_1wxPanel_0wxStaticBox_2wxTextCtrl_2": "0,000000 mm",
-        "wxTextCtrl_0": "Diode_SMD:D_SOD-123"
+        "wxTextCtrl_0": "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
       },
       "Свойства символа": {
         "__geometry": {
@@ -770,7 +772,7 @@
       },
       "Чертить": {
         "__geometry": {
-          "h": 840,
+          "h": 1080,
           "w": 1199,
           "x": 0,
           "y": 0
@@ -782,7 +784,7 @@
         "wxPanel_2wxStaticBox_0wxCheckBox_2": true,
         "wxPanel_2wxStaticBox_0wxCheckBox_3": true,
         "wxPanel_2wxStaticBox_0wxCheckBox_4": true,
-        "wxPanel_2wxStaticBox_0wxHtmlWindow_0": 11,
+        "wxPanel_2wxStaticBox_0wxHtmlWindow_0": 0,
         "wxStaticBox_1wxCheckBox_0": false,
         "wxStaticBox_1wxCheckBox_1": false,
         "wxStaticBox_1wxCheckBox_2": true,
@@ -825,6 +827,7 @@
   "do_not_show_again": {
     "data_collection_prompt": true,
     "env_var_overwrite_warning": false,
+    "migrate_wrl_prompt": false,
     "scaled_3d_models_warning": false,
     "update_check_prompt": true,
     "zone_fill_warning": false
@@ -867,7 +870,7 @@
     "zoom_speed_auto": true
   },
   "meta": {
-    "version": 5
+    "version": 6
   },
   "package_manager": {
     "sash_pos": 380
@@ -888,6 +891,7 @@
   },
   "system": {
     "clear_3d_cache_interval": 30,
+    "extra_3d_search_dirs": [],
     "file_explorer": "",
     "file_history_size": 9,
     "language": "Default",

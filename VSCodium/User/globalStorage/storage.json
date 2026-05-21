@@ -4,15 +4,12 @@
     "telemetry.devDeviceId": "edd842e3-6c0c-4a5a-a631-567033af181e",
     "backupWorkspaces": {
         "workspaces": [],
-        "folders": [
+        "folders": [],
+        "emptyWindows": [
             {
-                "folderUri": "file:///run/media/SteamLibrary/steamapps/common/tModLoader"
-            },
-            {
-                "folderUri": "file:///home/horizon/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/17p"
+                "backupFolder": "1778918241555"
             }
-        ],
-        "emptyWindows": []
+        ]
     },
     "windowControlHeight": 35,
     "profileAssociations": {
@@ -26,18 +23,19 @@
             "file:///run/media/SteamLibrary/steamapps/common/tModLoader": "__default__profile__",
             "file:///home/horizon/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/17p": "__default__profile__"
         },
-        "emptyWindows": {}
+        "emptyWindows": {
+            "1778918241555": "__default__profile__"
+        }
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/horizon/%D0%97%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8/17p",
-            "backupPath": "/home/horizon/.config/VSCodium/Backups/ecb5fca76836fa3ca64b49a6453463ef",
+            "backupPath": "/home/horizon/.config/VSCodium/Backups/1778918241555",
             "uiState": {
                 "mode": 0,
                 "x": 0,
                 "y": 0,
                 "width": 953,
-                "height": 1032
+                "height": 516
             }
         },
         "openedWindows": []
@@ -66,7 +64,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 35,
             "activityBarWidth": 48,
-            "sideBarWidth": 236,
+            "sideBarWidth": 0,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
