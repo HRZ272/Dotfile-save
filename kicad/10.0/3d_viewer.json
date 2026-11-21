@@ -28,7 +28,7 @@
     "height": -1,
     "keep_annotations": false,
     "lib_tree": {
-      "column_widths": null
+      "column_widths": {}
     },
     "place_as_group": true,
     "place_as_sheet": false,
@@ -37,6 +37,15 @@
     "sash_pos_v": -1,
     "sort_mode": 0,
     "width": -1
+  },
+  "export_image": {
+    "height": 0,
+    "lock_aspect_ratio": true,
+    "resolution_units": 0,
+    "size_units": 0,
+    "width": 0,
+    "x_resolution": 300.0,
+    "y_resolution": 300.0
   },
   "find_replace": {
     "find_history": [],
@@ -54,10 +63,6 @@
   "layer_presets": [
     {
       "colors": [
-        {
-          "color": "rgb(194, 194, 194)",
-          "layer": ""
-        },
         {
           "color": "rgb(102, 102, 128)",
           "layer": "background_bottom"
@@ -142,7 +147,7 @@
     }
   ],
   "lib_tree": {
-    "column_widths": null,
+    "column_widths": {},
     "columns": [],
     "open_libs": []
   },
@@ -468,7 +473,7 @@
     "pos_x": 0,
     "pos_y": 0,
     "size_x": 953,
-    "size_y": 516,
+    "size_y": 1032,
     "zoom_factors": [
       0.13,
       0.22,

@@ -43,10 +43,7 @@
     "height": 765,
     "keep_annotations": false,
     "lib_tree": {
-      "column_widths": {
-        "Description": 0,
-        "Item": 0
-      }
+      "column_widths": {}
     },
     "place_as_group": true,
     "place_as_sheet": false,
@@ -444,6 +441,9 @@
     "highlight_factor": 0.5,
     "select_factor": 0.75
   },
+  "import": {
+    "keep_kicad_layer_names": false
+  },
   "lib_tree": {
     "column_widths": {
       "Description": 112,
@@ -508,12 +508,15 @@
   },
   "system": {
     "file_history": [
-      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ.kicad_pcb",
-      "/run/media/horizon/Ventoy4/Вся флешка/не мои/ДЛ/ДЛ/ДЛ.kicad_pcb",
-      "/run/media/horizon/Ventoy4/Вся флешка/не мои/КТ/КТ2/КТ2.kicad_pcb",
-      "/run/media/horizon/Ventoy4/Вся флешка/не мои/АХ/АХ3/AX3.kicad_pcb",
+      "/home/horizon/.var/app/org.telegram.desktop/data/TelegramDesktop/tdata/temp_data/Сдача/АХ3/AX3.kicad_pcb",
+      "/home/horizon/Загрузки/Diploma/Дипломы финал/F/Я/Диплом (сдача)/курсач/курсач.kicad_pcb",
       "/home/horizon/Загрузки/Diploma/курсач/курсач.kicad_pcb",
-      "/home/horizon/Загрузки/KiCad moment/test/test.kicad_pcb"
+      "/run/media/War Thunder/Вся флешка/курсач/курсач.kicad_pcb",
+      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ.kicad_pcb",
+      "/run/media/War Thunder/Вся флешка/не мои/АХ/АХ3/AX3.kicad_pcb",
+      "/run/media/War Thunder/Вся флешка/не мои/ХД/ХД2/ХД.kicad_pcb",
+      "/run/media/War Thunder/Вся флешка/не мои/КТ/КТ2/КТ2.kicad_pcb",
+      "/run/media/horizon/Ventoy4/Вся флешка/не мои/ДЛ/ДЛ/ДЛ.kicad_pcb"
     ],
     "first_run_shown": false,
     "last_footprint3d_dir": "/usr/share/kicad/3dmodels/",
@@ -699,7 +702,7 @@
     },
     "maximized": true,
     "mru_path": "",
-    "perspective": "layout2|name=InfoBar;caption=;state=131454;dir=1;layer=1;row=0;pos=0;prop=100000;bestw=20;besth=30;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LoadNoticeInfoBar;caption=;state=131454;dir=1;layer=1;row=1;pos=0;prop=100000;bestw=20;besth=30;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=TopMainToolbar;caption=;state=139632;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=1164;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=TopAuxToolbar;caption=;state=139632;dir=1;layer=5;row=0;pos=0;prop=100000;bestw=1569;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LeftToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=34;besth=622;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=RightToolbar;caption=;state=139596;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=34;besth=819;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayersManager;caption=Внешний вид;state=1532;dir=2;layer=4;row=0;pos=0;prop=100000;bestw=220;besth=-1;minw=200;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=220;floath=480|name=SelectionFilter;caption=Фильтр выделения;state=1532;dir=2;layer=4;row=0;pos=1;prop=0;bestw=306;besth=-1;minw=306;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=306;floath=171|name=DesignBlocks;caption=Дизайн-блоки;state=2099150;dir=2;layer=5;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=50;floaty=200;floatw=800;floath=600|name=PropertiesManager;caption=Свойства;state=2098686;dir=4;layer=5;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=300;floath=200|name=DrawFrame;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=400;besth=188;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=NetInspector;caption=Инспектор цепей;state=2098686;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=300;floath=200|name=Search;caption=Поиск;state=2098686;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=180;besth=100;minw=180;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=480;floath=200|dock_size(1,6,0)=38|dock_size(1,5,0)=38|dock_size(3,6,0)=38|dock_size(4,3,0)=34|dock_size(2,3,0)=34|dock_size(2,4,0)=306|dock_size(5,0,0)=384|",
+    "perspective": "layout2|name=InfoBar;caption=;state=131454;dir=1;layer=1;row=0;pos=0;prop=100000;bestw=20;besth=30;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LoadNoticeInfoBar;caption=;state=131454;dir=1;layer=1;row=1;pos=0;prop=100000;bestw=20;besth=30;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=TopMainToolbar;caption=;state=139632;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=1164;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=TopAuxToolbar;caption=;state=139632;dir=1;layer=5;row=0;pos=0;prop=100000;bestw=1569;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LeftToolbar;caption=;state=139596;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=34;besth=622;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=RightToolbar;caption=;state=139596;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=34;besth=819;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LayersManager;caption=Внешний вид;state=1532;dir=2;layer=4;row=0;pos=0;prop=100000;bestw=220;besth=-1;minw=200;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=220;floath=480|name=SelectionFilter;caption=Фильтр выделения;state=1532;dir=2;layer=4;row=0;pos=1;prop=0;bestw=306;besth=-1;minw=306;minh=178;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=306;floath=171|name=DesignBlocks;caption=Дизайн-блоки;state=2099150;dir=2;layer=5;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=50;floaty=200;floatw=800;floath=600|name=PropertiesManager;caption=Свойства;state=2098686;dir=4;layer=5;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=300;floath=200|name=DrawFrame;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=400;besth=188;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=NetInspector;caption=Инспектор цепей;state=2098686;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=300;floath=200|name=Search;caption=Поиск;state=2098686;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=180;besth=100;minw=180;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=480;floath=200|dock_size(1,6,0)=38|dock_size(1,5,0)=38|dock_size(3,6,0)=38|dock_size(4,3,0)=34|dock_size(2,3,0)=34|dock_size(2,4,0)=306|dock_size(5,0,0)=384|",
     "pos_x": 0,
     "pos_y": 0,
     "size_x": 953,

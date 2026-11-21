@@ -21,7 +21,7 @@
     "height": -1,
     "keep_annotations": false,
     "lib_tree": {
-      "column_widths": null
+      "column_widths": {}
     },
     "place_as_group": true,
     "place_as_sheet": false,
@@ -45,9 +45,12 @@
     "select_factor": 0.75
   },
   "lib_tree": {
-    "column_widths": null,
+    "column_widths": {},
     "columns": [],
     "open_libs": []
+  },
+  "libraries": {
+    "overrides": {}
   },
   "meta": {
     "version": 0
@@ -55,6 +58,7 @@
   "pcm": {
     "check_for_updates": false,
     "last_download_dir": "",
+    "last_selected_repo_id": "",
     "lib_auto_add": true,
     "lib_auto_remove": true,
     "lib_prefix": "PCM_",
@@ -90,15 +94,15 @@
   "system": {
     "check_for_kicad_updates": false,
     "file_history": [
-      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ.kicad_pro",
-      "/run/media/horizon/Ventoy4/Вся флешка/не мои/ДЛ/ДЛ/ДЛ.kicad_pro",
-      "/home/horizon/Загрузки/Diploma/курсач/4D62~1.kicad_pro",
-      "/run/media/horizon/Ventoy4/Вся флешка/курсач/4D62~1.kicad_pro",
-      "/run/media/horizon/Ventoy4/Вся флешка/не мои/КТ/КТ2/КТ2.kicad_pro",
-      "/run/media/horizon/Ventoy4/Вся флешка/не мои/АХ/АХ3/AX3.kicad_pro",
+      "/home/horizon/.var/app/org.telegram.desktop/data/TelegramDesktop/tdata/temp_data/Сдача/АХ3/AX3.kicad_pro",
+      "/home/horizon/ТоЧтоБылоНаФлешке/Диплом Маршалл (сдача)/курсач/4D62~1.kicad_pro",
+      "/home/horizon/Загрузки/Diploma/Дипломы финал/F/Я/Диплом (сдача)/курсач/курсач.kicad_pro",
+      "/home/horizon/Загрузки/Diploma/Дипломы финал/F/Королёв/Сдача/КТ2/КТ2.kicad_pro",
+      "/home/horizon/Загрузки/Diploma/Дипломы финал/F/Липатров/ДЛ/ДЛ.kicad_pro",
+      "/home/horizon/Загрузки/Diploma/Дипломы финал/F/Хачатуров/Сдача/АХ3/AX3.kicad_pro",
+      "/run/media/War Thunder/Вся флешка/не мои/АХ/АХ3/AX3.kicad_pro",
       "/home/horizon/Загрузки/Diploma/курсач/курсач.kicad_pro",
-      "/run/media/horizon/Ventoy1/Вся флешка/курсач/4D62~1.kicad_pro",
-      "/home/horizon/Загрузки/KiCad moment/test/test.kicad_pro"
+      "/run/media/War Thunder/Вся флешка/курсач/курсач.kicad_pro"
     ],
     "first_run_shown": false,
     "last_design_block_lib_dir": "",
@@ -108,12 +112,13 @@
     "last_update_check_time": "",
     "max_undo_items": 0,
     "open_projects": [
-      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ.kicad_pro"
+      "/home/horizon/.var/app/org.telegram.desktop/data/TelegramDesktop/tdata/temp_data/Сдача/АХ3/AX3.kicad_pro"
     ],
     "show_import_issues": true,
     "units": 1
   },
   "template": {
+    "browsed_path": "",
     "filter": 0,
     "last_used": "/home/horizon/.local/share/kicad/10.0/template/default",
     "recent_templates": [
@@ -125,8 +130,8 @@
         "y": 0
       },
       "size": {
-        "height": 564,
-        "width": 740
+        "height": 364,
+        "width": 663
       }
     }
   },
@@ -274,7 +279,7 @@
       "user_grid_y": ""
     },
     "maximized": true,
-    "mru_path": "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/",
+    "mru_path": "/home/horizon/.var/app/org.telegram.desktop/data/TelegramDesktop/tdata/temp_data/Сдача/АХ3/",
     "perspective": "layout2|name=TopMainToolbar;caption=;state=139596;dir=4;layer=2;row=0;pos=0;prop=100000;bestw=34;besth=243;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=ProjectTree;caption=Файлы проекта;state=1340;dir=4;layer=1;row=0;pos=0;prop=100000;bestw=250;besth=20;minw=250;minh=80;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=LocalHistory;caption=Локальная история;state=2098494;dir=4;layer=1;row=0;pos=1;prop=100000;bestw=20;besth=20;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Editors;caption=Редакторы;state=508;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=700;besth=590;minw=700;minh=590;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|dock_size(4,2,0)=34|dock_size(4,1,0)=250|dock_size(5,0,0)=700|",
     "pos_x": 0,
     "pos_y": 0,

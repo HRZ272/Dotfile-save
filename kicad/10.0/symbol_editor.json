@@ -29,7 +29,7 @@
     "height": -1,
     "keep_annotations": false,
     "lib_tree": {
-      "column_widths": null
+      "column_widths": {}
     },
     "place_as_group": true,
     "place_as_sheet": false,
@@ -192,7 +192,7 @@
     "pos_x": 0,
     "pos_y": 0,
     "size_x": 953,
-    "size_y": 516,
+    "size_y": 1032,
     "zoom_factors": [
       0.05,
       0.07,

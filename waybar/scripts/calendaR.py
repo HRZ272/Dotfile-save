@@ -72,7 +72,7 @@ class CalApp(tk.Tk):
         self.cur_year  = self.today.year
 
         # ── position: identical formula to weather_popup ──────────
-        sw = self.winfo_screenwidth()
+        sw = 1920
         x  = (sw - WIN_W) // 2
         y  = WAYBAR_HEIGHT + 4
         self.geometry(f"{WIN_W}x{WIN_H}+{x}+{y}")

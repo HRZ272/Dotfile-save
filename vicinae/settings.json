@@ -35,8 +35,8 @@
       "toggle-action-panel": "control+A"
    },
    "favorites": [
-      "applications:discord",
       "applications:legcord",
+      "applications:com.ayugram",
       "applications:AmneziaVPN",
       "applications:start-tor-browser",
       "applications:org.telegram",

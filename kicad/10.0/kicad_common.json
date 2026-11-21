@@ -137,15 +137,19 @@
       },
       "Выбор шаблона проекта": {
         "__geometry": {
-          "h": 564,
-          "w": 740,
+          "h": 364,
+          "w": 663,
           "x": 0,
           "y": 0
         },
         "wxPanel_0wxScrolledWindow_0": 0,
         "wxPanel_1wxChoice_0": 0,
         "wxPanel_1wxScrolledWindow_0": 0,
-        "wxPanel_1wxSearchCtrl_0": ""
+        "wxPanel_1wxSearchCtrl_0": "",
+        "wxSplitterWindow_0": 300,
+        "wxSplitterWindow_0wxPanel_0wxChoice_0": 0,
+        "wxSplitterWindow_0wxPanel_0wxScrolledWindow_0": 0,
+        "wxSplitterWindow_0wxPanel_0wxSearchCtrl_0": ""
       },
       "Выбрать символ": {
         "__geometry": {
@@ -324,17 +328,17 @@
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxCheckBox_0": false,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxCheckBox_1": true,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxSpinCtrl_0": 2,
-        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_0": 200000,
-        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_1": 250000,
+        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_0": 100000,
+        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_1": 100000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_10": 200000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_11": 100000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_12": 100000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_13": 800000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_14": 80000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_15": 5000,
-        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_2": 250000,
+        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_2": 100000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_3": 100000,
-        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_4": 600000,
+        "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_4": 500000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_5": 250000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_6": 500000,
         "wxPanel_0wxTreebook_0wxPanel_11wxPanel_0wxScrolledWindow_0wxTextCtrl_7": 0,
@@ -427,6 +431,20 @@
         "wxPanel_0wxTreebook_0wxPanel_7wxPanel_0wxScrolledWindow_0wxPanel_2wxPanel_0wxTextCtrl_0": "",
         "wxPanel_0wxTreebook_0wxPanel_7wxPanel_0wxScrolledWindow_0wxPanel_2wxPanel_0wxTextCtrl_1": 0,
         "wxPanel_0wxTreebook_0wxPanel_7wxPanel_0wxScrolledWindow_0wxPanel_2wxPanel_0wxTextCtrl_2": 10000000000000
+      },
+      "Печать": {
+        "__geometry": {
+          "h": 244,
+          "w": 422,
+          "x": 0,
+          "y": 0
+        },
+        "wxCheckBox_0": false,
+        "wxCheckBox_1": true,
+        "wxCheckBox_2": true,
+        "wxChoice_0": 0,
+        "wxChoice_1": 2,
+        "wxPanel_0wxStaticBox_0wxChoice_0": -1
       },
       "Правка поля Datasheet": {
         "__geometry": {
@@ -742,6 +760,17 @@
         "wxNotebook_0wxPanel_3wxSplitterWindow_0wxPanel_1wxPanel_0wxStaticBox_2wxTextCtrl_2": "0,000000 mm",
         "wxTextCtrl_0": "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
       },
+      "Свойства проводников и шин": {
+        "__geometry": {
+          "h": 232,
+          "w": 549,
+          "x": 0,
+          "y": 0
+        },
+        "wxBitmapComboBox_0": "По умолчанию",
+        "wxTextCtrl_0": 0,
+        "wxTextCtrl_1": 0
+      },
       "Свойства символа": {
         "__geometry": {
           "h": 636,
@@ -769,6 +798,40 @@
         "wxNotebook_0wxPanel_2wxCheckBox_0": false,
         "wxNotebook_0wxPanel_2wxGrid_0": "0 1",
         "wxTextCtrl_0": "Device:R_Potentiometer"
+      },
+      "Свойства текстаSchematicFrame": {
+        "__geometry": {
+          "h": 401,
+          "w": 1039,
+          "x": 0,
+          "y": 0
+        },
+        "wxBitmapComboBox_0": "",
+        "wxCheckBox_0": false,
+        "wxCheckBox_1": false,
+        "wxCheckBox_2": false,
+        "wxCheckBox_3": false,
+        "wxCheckBox_4": false,
+        "wxCheckBox_5": false,
+        "wxCheckBox_6": false,
+        "wxOwnerDrawnComboBox_0": 0,
+        "wxOwnerDrawnComboBox_0wxTextCtrl_0": "Шрифт по умолчанию",
+        "wxOwnerDrawnComboBox_1": -1,
+        "wxOwnerDrawnComboBox_1wxTextCtrl_0": "",
+        "wxTextCtrl_0": 40000,
+        "wxTextCtrl_1": 0
+      },
+      "Таблица полей символов": {
+        "__geometry": {
+          "h": 713,
+          "w": 1351,
+          "x": 0,
+          "y": 0
+        },
+        "wxSplitterWindow_0": 400,
+        "wxSplitterWindow_0wxPanel_0wxSplitterWindow_0": 483,
+        "wxSplitterWindow_0wxPanel_0wxSplitterWindow_0wxPanel_0wxChoice_0": 1,
+        "wxSplitterWindow_0wxPanel_0wxSplitterWindow_0wxPanel_0wxGrid_0": "0 1 2 3"
       },
       "Чертить": {
         "__geometry": {
@@ -821,6 +884,45 @@
         "wxStaticBox_6wxCheckBox_3": false,
         "wxStaticBox_6wxChoice_0": 1,
         "wxTextCtrl_0": ""
+      },
+      "Чертить схему": {
+        "__geometry": {
+          "h": 517,
+          "w": 1101,
+          "x": 0,
+          "y": 0
+        },
+        "wxChoice_0": 0,
+        "wxPanel_1wxStaticBox_0wxCheckBox_0": true,
+        "wxPanel_1wxStaticBox_0wxCheckBox_1": true,
+        "wxPanel_1wxStaticBox_0wxCheckBox_2": true,
+        "wxPanel_1wxStaticBox_0wxCheckBox_3": true,
+        "wxPanel_1wxStaticBox_0wxCheckBox_4": true,
+        "wxPanel_1wxStaticBox_0wxHtmlWindow_0": 1,
+        "wxRadioBox_0": 1,
+        "wxStaticBox_0wxCheckBox_0": true,
+        "wxStaticBox_0wxCheckBox_1": false,
+        "wxStaticBox_0wxChoice_0": 0,
+        "wxStaticBox_0wxChoice_1": 0,
+        "wxStaticBox_0wxChoice_2": -1,
+        "wxStaticBox_0wxTextCtrl_0": 0,
+        "wxStaticBox_1wxCheckBox_0": true,
+        "wxStaticBox_1wxCheckBox_1": true,
+        "wxStaticBox_1wxCheckBox_2": true,
+        "wxStaticBox_2wxChoice_0": 0,
+        "wxStaticBox_3wxCheckBox_0": false,
+        "wxTextCtrl_0": ""
+      },
+      "Экспорт символов": {
+        "__geometry": {
+          "h": 522,
+          "w": 622,
+          "x": 0,
+          "y": 0
+        },
+        "wxCheckBox_0": false,
+        "wxCheckBox_1": false,
+        "wxTextCtrl_0": ""
       }
     }
   },
@@ -832,14 +934,20 @@
     "update_check_prompt": true,
     "zone_fill_warning": false
   },
+  "embed_file_defaults": {
+    "datasheet": true,
+    "drawing_sheet": true,
+    "model_3d": false,
+    "sim_model": false
+  },
   "environment": {
-    "vars": null
+    "vars": {}
   },
   "git": {
     "authorEmail": "",
     "authorName": "",
     "enableGit": true,
-    "repositories": null,
+    "repositories": [],
     "updatInterval": 5,
     "useDefaultAuthor": true
   },
@@ -900,6 +1008,6 @@
     "pdf_viewer_name": "",
     "text_editor": "",
     "use_system_pdf_viewer": true,
-    "working_dir": "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ"
+    "working_dir": "/home/horizon/.var/app/org.telegram.desktop/data/TelegramDesktop/tdata/temp_data/Сдача/АХ3"
   }
 }

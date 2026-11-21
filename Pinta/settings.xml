@@ -1,5 +1,5 @@
 ﻿<settings>
-  <setting name="dock-layers-minimized" type="System.Boolean">False</setting>
+  <setting name="dock-layers-minimized" type="System.Boolean">True</setting>
   <setting name="dock-history-minimized" type="System.Boolean">False</setting>
   <setting name="ruler-metric" type="System.Int32">0</setting>
   <setting name="color-scheme" type="System.Int32">0</setting>

@@ -5,6 +5,7 @@
 ###
 
 OUTPUT_DIR="$HOME/Videos/Recordings"
+LOG_FILE="/tmp/gsr.log"
 
 if [[ ! -d "$OUTPUT_DIR" ]]; then
     notify-send "Screen recording" "Directory does not exist: $OUTPUT_DIR" -u critical -t 3000
@@ -60,7 +61,7 @@ start_webcam_overlay() {
 }
 
 start_screenrecording() {
-    local filename audio_args
+    local filename audio_args gsr_pid
 
     filename="$OUTPUT_DIR/$(date +%Y-%m-%d_%H-%M-%S).mp4"
 
@@ -70,7 +71,23 @@ start_screenrecording() {
     notify-send "Screen recording" "Starting recording to $filename" -t 1000
     sleep 1.1
 
-    gpu-screen-recorder -w "$@" -f 60 -c mp4 -o "$filename" $audio_args &
+    # Log the command and gsr output so crashes are visible
+    {
+        echo "=== $(date) ==="
+        echo "cmd: gpu-screen-recorder -w $* -f 60 -c mp4 -o $filename $audio_args"
+    } >"$LOG_FILE"
+
+    gpu-screen-recorder -w "$@" -f 60 -c mp4 -o "$filename" $audio_args >>"$LOG_FILE" 2>&1 &
+    gsr_pid=$!
+
+    # Give it a moment to fail, then check if it is still alive
+    sleep 1
+    if ! kill -0 "$gsr_pid" 2>/dev/null; then
+        notify-send "Screen recording" "gpu-screen-recorder crashed:\n$(tail -n 4 "$LOG_FILE")" -u critical -t 10000
+        cleanup_webcam
+        toggle_screenrecording_indicator
+        exit 1
+    fi
 
     toggle_screenrecording_indicator
 }
@@ -130,18 +147,40 @@ elif [[ "$SCOPE" == "output" ]]; then
 else
     [[ "$WEBCAM" == "true" ]] && start_webcam_overlay
 
-    scale=$(hyprctl monitors -j | jq -r '.[] | select(.focused == true) | .scale')
-
     if ! region=$(slurp -f "%wx%h+%x+%y"); then
         [[ "$WEBCAM" == "true" ]] && cleanup_webcam
         exit 1
     fi
 
-    if [[ "$region" =~ ^([0-9]+)x([0-9]+)\+([0-9]+)\+([0-9]+)$ ]]; then
-        w=$(awk "BEGIN {printf \"%.0f\", ${BASH_REMATCH[1]} * $scale}")
-        h=$(awk "BEGIN {printf \"%.0f\", ${BASH_REMATCH[2]} * $scale}")
-        x=$(awk "BEGIN {printf \"%.0f\", ${BASH_REMATCH[3]} * $scale}")
-        y=$(awk "BEGIN {printf \"%.0f\", ${BASH_REMATCH[4]} * $scale}")
+    # Allow negative X/Y (monitor to the left/above primary)
+    if [[ "$region" =~ ^([0-9]+)x([0-9]+)\+(-?[0-9]+)\+(-?[0-9]+)$ ]]; then
+        rw="${BASH_REMATCH[1]}"
+        rh="${BASH_REMATCH[2]}"
+        rx="${BASH_REMATCH[3]}"
+        ry="${BASH_REMATCH[4]}"
+
+        # Find scale of the monitor that actually contains the selection,
+        # not just the focused one.
+        cx=$(( rx + rw / 2 ))
+        cy=$(( ry + rh / 2 ))
+
+        monitors_json=$(hyprctl monitors -j)
+        scale=$(echo "$monitors_json" | jq -r \
+            --argjson cx "$cx" --argjson cy "$cy" '
+            .[] | select(
+                .x <= $cx and $cx < (.x + (.width  / .scale)) and
+                .y <= $cy and $cy < (.y + (.height / .scale))
+            ) | .scale' | head -1)
+
+        # Fallback to focused monitor if region centre didn't land on any monitor
+        if [[ -z "$scale" ]]; then
+            scale=$(echo "$monitors_json" | jq -r '.[] | select(.focused == true) | .scale')
+        fi
+
+        w=$(awk "BEGIN {printf \"%.0f\", $rw * $scale}")
+        h=$(awk "BEGIN {printf \"%.0f\", $rh * $scale}")
+        x=$(awk "BEGIN {printf \"%.0f\", $rx * $scale}")
+        y=$(awk "BEGIN {printf \"%.0f\", $ry * $scale}")
         scaled_region="${w}x${h}+${x}+${y}"
     else
         scaled_region="$region"

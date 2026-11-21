@@ -114,10 +114,7 @@
     "height": 601,
     "keep_annotations": false,
     "lib_tree": {
-      "column_widths": {
-        "Description": 0,
-        "Item": 0
-      }
+      "column_widths": {}
     },
     "place_as_group": true,
     "place_as_sheet": false,
@@ -160,11 +157,20 @@
   },
   "field_editor": {
     "export_filename": "",
-    "field_widths": {},
+    "field_widths": {
+      "${DNP}": 100,
+      "${EXCLUDE_FROM_BOARD}": 100,
+      "${EXCLUDE_FROM_BOM}": 100,
+      "${QUANTITY}": 117,
+      "Datasheet": 450,
+      "Footprint": 450,
+      "Reference": 100,
+      "Value": 131
+    },
     "sash_pos": 400,
     "selection_mode": 0,
     "sidebar_collapsed": false,
-    "variant_sash_pos": 500
+    "variant_sash_pos": 483
   },
   "find_replace": {
     "find_history": [],
@@ -318,17 +324,17 @@
   },
   "printing": {
     "as_item_checkboxes": false,
-    "background": false,
-    "color_theme": "",
+    "background": true,
+    "color_theme": "_builtin_default",
     "drill_marks": 1,
     "edge_cuts_on_all_pages": true,
     "layers": [],
     "mirror": false,
-    "monochrome": true,
+    "monochrome": false,
     "pagination": 1,
     "scale": 1.0,
     "title_block": false,
-    "use_theme": false
+    "use_theme": true
   },
   "remote_symbols": {
     "add_to_global_table": false,
@@ -460,13 +466,15 @@
   },
   "system": {
     "file_history": [
-      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ.kicad_sch",
-      "/run/media/horizon/Ventoy4/Вся флешка/не мои/ДЛ/ДЛ/ДЛ.kicad_sch",
-      "/run/media/horizon/Ventoy4/Вся флешка/не мои/КТ/КТ2/КТ2.kicad_sch",
-      "/run/media/horizon/Ventoy4/Вся флешка/не мои/АХ/АХ3/AX3.kicad_sch",
+      "/home/horizon/.var/app/org.telegram.desktop/data/TelegramDesktop/tdata/temp_data/Сдача/АХ3/AX3.kicad_sch",
+      "untitled.kicad_sch",
+      "/home/horizon/Загрузки/Diploma/Дипломы финал/F/Королёв/Сдача/КТ2/КТ2.kicad_sch",
+      "/home/horizon/Загрузки/Diploma/Дипломы финал/F/Липатров/ДЛ/ДЛ.kicad_sch",
+      "/home/horizon/Загрузки/Diploma/Дипломы финал/F/Хачатуров/Сдача/АХ3/AX3.kicad_sch",
+      "/run/media/War Thunder/Вся флешка/не мои/АХ/АХ3/AX3.kicad_sch",
       "/home/horizon/Загрузки/Diploma/курсач/курсач.kicad_sch",
-      "/run/media/horizon/Ventoy1/Вся флешка/курсач/курсач.kicad_sch",
-      "/home/horizon/Загрузки/KiCad moment/test/test.kicad_sch"
+      "/run/media/War Thunder/Вся флешка/не мои/ДЛ/ДЛ/ДЛ.kicad_sch",
+      "/run/media/horizon/Ventoy4/Вся флешка/не мои/ДЛ/ДЛ/ДЛ.kicad_sch"
     ],
     "first_run_shown": false,
     "last_imperial_units": 5,
@@ -532,11 +540,11 @@
     },
     "maximized": true,
     "mru_path": "",
-    "perspective": "layout2|name=InfoBar;caption=;state=131454;dir=1;layer=1;row=0;pos=0;prop=100000;bestw=20;besth=30;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=TopMainToolbar;caption=;state=139632;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=1374;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=SchematicHierarchy;caption=Иерархия схемы;state=2099150;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=120;minh=60;maxw=-1;maxh=-1;floatx=45;floaty=49;floatw=200;floath=200|name=PropertiesManager;caption=Свойства;state=2099150;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=50;floaty=200;floatw=300;floath=400|name=SelectionFilter;caption=Фильтр выделения;state=2098638;dir=4;layer=3;row=0;pos=0;prop=0;bestw=180;besth=-1;minw=180;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DesignBlocks;caption=Дизайн-блоки;state=2099150;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=50;floaty=200;floatw=800;floath=600|name=RemoteSymbol;caption=Удаленные символы;state=2099150;dir=2;layer=3;row=0;pos=3;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=80;floaty=220;floatw=800;floath=600|name=NetNavigator;caption=Навигатор по цепям;state=2099150;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=120;minh=60;maxw=-1;maxh=-1;floatx=50;floaty=200;floatw=200;floath=200|name=LeftToolbar;caption=;state=139596;dir=4;layer=2;row=0;pos=0;prop=100000;bestw=34;besth=348;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=RightToolbar;caption=;state=139596;dir=2;layer=2;row=0;pos=0;prop=100000;bestw=34;besth=810;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DrawFrame;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=400;besth=188;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Search;caption=Поиск;state=2098686;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=180;besth=100;minw=180;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=480;floath=200|dock_size(1,6,0)=38|dock_size(3,6,0)=38|dock_size(4,2,0)=34|dock_size(2,2,0)=34|dock_size(5,0,0)=384|",
+    "perspective": "layout2|name=InfoBar;caption=;state=131454;dir=1;layer=1;row=0;pos=0;prop=100000;bestw=20;besth=30;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=TopMainToolbar;caption=;state=139632;dir=1;layer=6;row=0;pos=0;prop=100000;bestw=1374;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=MsgPanel;caption=;state=131452;dir=3;layer=6;row=0;pos=0;prop=100000;bestw=400;besth=38;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=SchematicHierarchy;caption=Иерархия схемы;state=2099150;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=120;minh=60;maxw=-1;maxh=-1;floatx=45;floaty=49;floatw=200;floath=200|name=PropertiesManager;caption=Свойства;state=2099150;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=50;floaty=200;floatw=300;floath=400|name=SelectionFilter;caption=Фильтр выделения;state=2098638;dir=4;layer=3;row=0;pos=0;prop=0;bestw=180;besth=-1;minw=180;minh=130;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DesignBlocks;caption=Дизайн-блоки;state=2099150;dir=2;layer=3;row=0;pos=0;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=50;floaty=200;floatw=800;floath=600|name=RemoteSymbol;caption=Удаленные символы;state=2099150;dir=2;layer=3;row=0;pos=3;prop=100000;bestw=300;besth=200;minw=240;minh=60;maxw=-1;maxh=-1;floatx=80;floaty=220;floatw=800;floath=600|name=NetNavigator;caption=Навигатор по цепям;state=2099150;dir=4;layer=3;row=0;pos=0;prop=100000;bestw=200;besth=200;minw=120;minh=60;maxw=-1;maxh=-1;floatx=50;floaty=200;floatw=200;floath=200|name=LeftToolbar;caption=;state=139596;dir=4;layer=2;row=0;pos=0;prop=100000;bestw=34;besth=348;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=RightToolbar;caption=;state=139596;dir=2;layer=2;row=0;pos=0;prop=100000;bestw=34;besth=810;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=DrawFrame;caption=;state=1020;dir=5;layer=0;row=0;pos=0;prop=100000;bestw=400;besth=188;minw=-1;minh=-1;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=-1;floath=-1|name=Search;caption=Поиск;state=2098686;dir=3;layer=0;row=0;pos=0;prop=100000;bestw=180;besth=100;minw=180;minh=60;maxw=-1;maxh=-1;floatx=-1;floaty=-1;floatw=480;floath=200|dock_size(1,6,0)=38|dock_size(3,6,0)=38|dock_size(4,2,0)=34|dock_size(2,2,0)=34|dock_size(5,0,0)=384|",
     "pos_x": 0,
     "pos_y": 0,
     "size_x": 953,
-    "size_y": 1032,
+    "size_y": 516,
     "zoom_factors": [
       0.05,
       0.07,

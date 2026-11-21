@@ -6,9 +6,11 @@ STATE_FILE="/tmp/brightness_state"
 case $1 in
     toggle)
         if [ "$STATE" = "max" ]; then
-            ddcutil setvcp 10 10 --bus 3 --noverify
+            ddcutil setvcp 10 0 --bus 4 --noverify
+            ddcutil setvcp 10 0 --bus 3 --noverify
             echo "min" > "$STATE_FILE"
         else
+            ddcutil setvcp 10 100 --bus 4 --noverify
             ddcutil setvcp 10 100 --bus 3 --noverify
             echo "max" > "$STATE_FILE"
         fi

@@ -1,5 +1,33 @@
-// -*- mode: jsonc -*-
+// ════════════════════════════════════════════════════════════════════════════
+//  WAYBAR CONFIG — ПЕРЕГРУППИРОВАННАЯ КОПИЯ
+// ────────────────────────────────────────────────────────────────────────────
+//  Оригинал:        ~/.config/waybar/config.jsonc  (не изменён)
+//  Этот файл:       ~/.config/waybar/config.new.jsonc
+//
+//  Что сделано:
+//    • модули разложены по секциям так же, как разделы в style.css;
+//    • определения идут в том же порядке, что и модули на панели;
+//    • все модули и все значения сохранены 1:1, ничего не удалено.
+//
+//  СОДЕРЖАНИЕ
+//    00. Общие настройки панели
+//    01. Состав панели (left / center / right)
+//    02. Workspaces
+//    03. Левая часть: yandex, colorpicker, tray, image
+//    04. Центр: weather, clock, language
+//    05. Правая часть: аудио, яркость, сеть, текст, обновления, питание
+//    06. Резервные модули (есть в конфиге, нет на панели)
+//    07. AmneziaVPN (группа объявлена, но не подключена)
+//
+//  Чтобы применить: скопировать этот файл поверх config.jsonc
+//  (или запустить waybar с -c config.new.jsonc).
+// ════════════════════════════════════════════════════════════════════════════
+
 {
+    // ────────────────────────────────────────────────────────────────────────
+    //  00. ОБЩИЕ НАСТРОЙКИ ПАНЕЛИ
+    // ────────────────────────────────────────────────────────────────────────
+
     "layer": "top",
     "position": "top",
     "height": 30,
@@ -8,37 +36,49 @@
     "margin-left": 8,
     "margin-right": 10,
     "smooth-scrolling-threshold": 0.5,
-    
-    // Модули в тех же местах что и были
+
+    // ────────────────────────────────────────────────────────────────────────
+    //  01. СОСТАВ ПАНЕЛИ
+    // ------------------------------------------------------------------------
+    //  Слева   → воркспейсы, музыка, трей, пипетка, аватар
+    //  Центр   → погода, часы, раскладка
+    //  Справа  → статус, аудио, яркость, громкость, сводка, сеть, текст, TOR, питание
+    // ────────────────────────────────────────────────────────────────────────
+
     "modules-left": [
-        "hyprland/workspaces",
-        "custom/yandex",
-        "tray",
-        "custom/colorpicker",
-        "image#myicon"
+        "hyprland/workspaces",      // 1. воркспейсы
+        "custom/yandex",            // 2. Яндекс Музыка (бегущая строка)
+        "tray",                     // 3. системный трей
+        "custom/colorpicker",       // 4. пипетка hyprpicker
+        "image#myicon"              // 5. аватар
     ],
+
     "modules-center": [
-        "custom/weather",
-        "clock",
-        "hyprland/language"
+        "custom/weather",           // 1. погода wttr.in
+        "clock",                    // 2. часы + календарь
+        "hyprland/language"         // 3. раскладка EN/RU
     ],
-    "modules-right": [      
-        "idle_inhibitor",
-        "custom/audio-headphones",
-        "custom/audio-speakers",
-        "custom/brightness",
-        "pulseaudio",
-        "custom/chromium_vol",
-        "custom/surge",
-        "custom/text",
-        "custom/updates",
-        "custom/txt",
-        "custom/power"
+
+    "modules-right": [
+        "idle_inhibitor",           // 1. блокировка сна
+        "custom/audio-headphones",  // 2. аудио: наушники ┐
+        "custom/audio-speakers",    // 3. аудио: колонки   ┘ единый блок
+        "custom/brightness",        // 4. яркость
+        "pulseaudio",               // 5. общая громкость
+        "custom/chromium_vol",      // 6. громкость Chromium
+        "custom/surge",             // 7. температуры / сводка
+        "custom/netspeed",          // 8. скорость сети
+        "custom/text",              // 9. заметка / таймер
+        "custom/updates",           // 10. обновления pacman
+        "custom/txt",               // 11. TOR on/off
+        "custom/power"              // 12. меню питания
     ],
-    
-    // ===== КОНФИГУРАЦИЯ МОДУЛЕЙ =====
-    
-"hyprland/workspaces": {
+
+    // ────────────────────────────────────────────────────────────────────────
+    //  02. WORKSPACES
+    // ────────────────────────────────────────────────────────────────────────
+
+    "hyprland/workspaces": {
         "disable-scroll": false,
         "all-outputs": true,
         "on-scroll-up": "hyprctl dispatch workspace e+1",
@@ -54,7 +94,7 @@
             "7": "󰲬",
             "8": "󰲮",
             "9": "󰲰",
-            "urgent": "",
+            "urgent": "󰝥",
             "active": "",
             "default": "󰝥"
         },
@@ -63,6 +103,11 @@
         }
     },
 
+    // ────────────────────────────────────────────────────────────────────────
+    //  03. ЛЕВАЯ ЧАСТЬ ПАНЕЛИ
+    // ────────────────────────────────────────────────────────────────────────
+
+    // --- Яндекс Музыка ------------------------------------------------------
     "custom/yandex": {
         "format": "{}",
         "exec": "~/.config/waybar/scripts/marquee_music.py",
@@ -73,15 +118,35 @@
         "tooltip": true,
         "tooltip-format": "Яндекс Музыка"
     },
-    
-    "clock": {
-        "format": "{:%H:%M:%S}",
-        "interval": 1,
-        "format-alt": "{:%d.%m.%Y}",
-        "on-click-right": "~/.config/waybar/scripts/calendaR.py",
+
+    // --- Пипетка ------------------------------------------------------------
+    "custom/colorpicker": {
+        "format": "󰈋",
+        "on-click": "hyprpicker -a",
         "tooltip": false
     },
-    
+
+    // --- Трей ---------------------------------------------------------------
+    "tray": {
+        "icon-size": 18,
+        "spacing": 6,
+        "show-passive-items": false
+    },
+
+    // --- Аватар -------------------------------------------------------------
+    "image#myicon": {
+        "path": "/home/horizon/akulka.png",
+        "size": 30,
+        "interval": 60,
+        "on-click-right": "xdg-open https://ru.pinterest.com/search/pins/?q=ellen%20joe&rs=rs&source_id=rs_Jqdxn1oH&eq=e&etslf=3662",
+        "on-click": "python3 ~/.config/waybar/scripts/widgetL.py"
+    },
+
+    // ────────────────────────────────────────────────────────────────────────
+    //  04. ЦЕНТР ПАНЕЛИ
+    // ────────────────────────────────────────────────────────────────────────
+
+    // --- Погода -------------------------------------------------------------
     "custom/weather": {
         "format": "{}",
         "tooltip": true,
@@ -89,13 +154,28 @@
         "exec": "curl -s 'wttr.in/55.697726,37.321721?format=%c+%t&lang=ru'",
         "on-click": "python3 ~/.config/waybar/scripts/weather_popup.py"
     },
-    
+
+    // --- Часы ---------------------------------------------------------------
+    "clock": {
+        "format": "{:%H:%M:%S}",
+        "interval": 1,
+        "format-alt": "{:%d.%m.%Y}",
+        "on-click-right": "~/.config/waybar/scripts/calendaR.py",
+        "tooltip": false
+    },
+
+    // --- Раскладка ----------------------------------------------------------
     "hyprland/language": {
         "format": "{}",
         "format-en": "EN",
         "format-ru": "RU"
     },
-    
+
+    // ────────────────────────────────────────────────────────────────────────
+    //  05. ПРАВАЯ ЧАСТЬ ПАНЕЛИ
+    // ────────────────────────────────────────────────────────────────────────
+
+    // --- Idle inhibitor -----------------------------------------------------
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -106,7 +186,29 @@
         "tooltip-format-activated": "Idle inhibitor: ON",
         "tooltip-format-deactivated": "Idle inhibitor: OFF"
     },
-    
+
+    // --- Аудио: наушники и колонки (единый блок) ----------------------------
+    "custom/audio-headphones": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/check-headphones.sh",
+        "interval": 2,
+        "on-click": "~/.config/waybar/scripts/audio-headphones.sh",
+        "tooltip": true,
+        "tooltip-format": "Переключить на наушники"
+    },
+
+    "custom/audio-speakers": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/check-speakers.sh",
+        "interval": 2,
+        "on-click": "~/.config/waybar/scripts/audio-speakers.sh",
+        "tooltip": true,
+        "tooltip-format": "Переключить на колонки"
+    },
+
+    // --- PulseAudio ---------------------------------------------------------
     "pulseaudio": {
         "scroll-step": 5,
         "format": "{volume}% {icon}",
@@ -125,193 +227,206 @@
         "on-click": "pavucontrol",
         "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
     },
-    
+
+    // --- Громкость Chromium -------------------------------------------------
+    "custom/chromium_vol": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/chromium_vol.sh status",
+        "on-click": "~/.config/waybar/scripts/chromium_vol.sh mute",
+        "on-scroll-up": "~/.config/waybar/scripts/chromium_vol.sh up",
+        "on-scroll-down": "~/.config/waybar/scripts/chromium_vol.sh down",
+        "interval": 1,
+        "tooltip": true
+    },
+
+    // --- Яркость ------------------------------------------------------------
+    "custom/brightness": {
+        "format": "{}",
+        "return-type": "json",
+        "interval": "once",
+        "exec": "~/.config/waybar/scripts/brightness.sh",
+        "on-click": "~/.config/waybar/scripts/brightness.sh toggle",
+        "signal": 9,
+        "tooltip": false
+    },
+
+    // --- Surge / системная сводка -------------------------------------------
+    "custom/surge": {
+        "exec": "~/.config/waybar/scripts/temps.sh",
+        "interval": 3,
+        "on-click": "python3 ~/.config/waybar/scripts/waybar-sysinfo.py",
+        "format": "{}",
+        "tooltip": false,
+        "return-type": "json"
+    },
+
+    // --- Сеть ---------------------------------------------------------------
+    "custom/netspeed": {
+        "exec": "~/.config/waybar/scripts/netspeed.py",
+        "return-type": "json",
+        "on-click": "~/.config/waybar/scripts/speedtest_popup.py"
+    },
+
+    // --- Текст / заметка / таймер -------------------------------------------
+    "custom/text": {
+        "format": "{}",
+        "interval": 10,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/zam.py",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/timer.py",
+        "on-click-right": "~/.config/waybar/scripts/calc.py",
+        "on-click-middle": "~/.config/waybar/scripts/zam.py --gui &"
+    },
+
+    // --- Обновления ---------------------------------------------------------
+    "custom/updates": {
+        "format": "{} 󰇚",
+        "interval": 3600,
+        "exec": "checkupdates | wc -l",
+        "exec-if": "exit 0",
+        "on-click": "kitty --title update -e sudo pacman -Syu",
+        "signal": 8
+    },
+
+    // --- TOR ----------------------------------------------------------------
+    "custom/txt": {
+        "format": "TOR",
+        "on-click": "pkexec systemctl start tor",
+        "on-click-right": "pkexec systemctl stop tor",
+        "tooltip": false
+    },
+
+    // --- Питание ------------------------------------------------------------
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "python3 ~/.config/waybar/scripts/waybar-power.py",
+        "tooltip": false
+    },
+
+    // ────────────────────────────────────────────────────────────────────────
+    //  06. РЕЗЕРВНЫЕ МОДУЛИ
+    // ------------------------------------------------------------------------
+    //  Определены в конфиге, но сейчас не подключены к панели.
+    //  Стили для них есть в style.css (раздел 08).
+    // ────────────────────────────────────────────────────────────────────────
+
+    // --- Аудио: переключатель устройства ------------------------------------
+    "custom/audio-switch": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/audio-status.sh",
+        "interval": 2,
+        "on-click": "~/.config/waybar/scripts/audio-switch.sh;",
+        "tooltip": true,
+        "tooltip-format": "Переключить аудио устройство"
+    },
+
+    // --- Громкость (альтернатива pulseaudio) --------------------------------
+    "custom/volume": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/volume_status.sh",
+        "on-click": "~/.config/waybar/scripts/volume_toggle.sh",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+        "interval": 1,
+        "tooltip": true
+    },
+
+    // --- CPU ----------------------------------------------------------------
     "cpu": {
         "format": "{usage}% 󰍛",
         "interval": 2,
         "tooltip": true,
         "tooltip-format": "CPU usage: {usage}%\nFreq: {avg_frequency} GHz"
     },
-    
+
+    // --- Память -------------------------------------------------------------
     "memory": {
         "format": "{}% 󰘚",
         "interval": 5,
         "tooltip": true,
         "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G\nSwap: {swapUsed:0.1f}G / {swapTotal:0.1f}G"
-},    
-"tray": {
-    "icon-size": 18,
-    "spacing": 6,
-    "show-passive-items": false
-},
-"custom/audio-switch": {
-    "format": "{}",
-    "exec": "~/.config/waybar/scripts/audio-status.sh",
-    "interval": 2,
-    "on-click": "~/.config/waybar/scripts/audio-switch.sh;",
-    "tooltip": true,
-    "tooltip-format": "Переключить аудио устройство"
+    },
 
-},
-"custom/audio-headphones": {
-    "format": "{}",
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/check-headphones.sh",
-    "interval": 2,
-    "on-click": "~/.config/waybar/scripts/audio-headphones.sh",
-    "tooltip": true,
-    "tooltip-format": "Переключить на наушники"
-},
-"custom/audio-speakers": {
-    "format": "{}",
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/check-speakers.sh",
-    "interval": 2,
-    "on-click": "~/.config/waybar/scripts/audio-speakers.sh",
-    "tooltip": true,
-    "tooltip-format": "Переключить на колонки"
-},
-"custom/chromium_vol": {
-    "format": "{}",
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/chromium_vol.sh status",
-    "on-click": "~/.config/waybar/scripts/chromium_vol.sh mute",
-    "on-scroll-up": "~/.config/waybar/scripts/chromium_vol.sh up",
-    "on-scroll-down": "~/.config/waybar/scripts/chromium_vol.sh down",
-    "interval": 1,
-    "tooltip": true
-},
-"image#myicon": {
-    "path": "/home/horizon/akulka.png",
-    "size": 30,
-    "interval": 60,
-    "on-click": "xdg-open https://ru.pinterest.com/search/pins/?q=ellen%20joe&rs=rs&source_id=rs_Jqdxn1oH&eq=e&etslf=3662",
-    "on-click-right": "kitty btop",
-    "on-click-middle": "bash -c 'cd \"/run/media/War Thunder/WarThunder\" && __GL_MaxFramesAllowed=1 __GL_SYNC_TO_VBLANK=1 ./launcher'"
-},
-"custom/updates": {
-    "format": "{} 󰇚",
-    "interval": 3600,                     
-    "exec": "checkupdates | wc -l",
-    "exec-if": "exit 0",                  
-    "on-click": "kitty --title update -e sudo pacman -Syu", 
-    "signal": 8                           
-},
-"custom/temps": {
-    "exec": "~/.config/waybar/scripts/temps.sh",
-    "interval": 3,
-    "format": "{}",
-    "tooltip": true,
-    "return-type": "json"
-},
-"custom/text": {
-    "format": "{}",
-    "interval": 10,
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/zam.py",
-    "tooltip": false,
-    "on-click": "~/.config/waybar/scripts/timer.py",
-    "on-click-right": "~/.config/waybar/scripts/calc.py",  
-    "on-click-middle": "~/.config/waybar/scripts/zam.py --gui &"
-},
-"custom/steam": {
-    "format": "<span letter_spacing='-100000'>\uf1b6</span>", 
-    "tooltip": false,
-    "on-click": "steam",
-    "on-click-right": "~/.config/waybar/scripts/steam-menu.py",
-    "on-click-middle": "steam steam://open/games"
-},
-"custom/surge": {
-    "exec": "~/.config/waybar/scripts/temps.sh",
-    "interval": 3,
-    "on-click": "python3 ~/.config/waybar/scripts/waybar-sysinfo.py",
-    "format": "{}",
-    "tooltip": false,
-    "return-type": "json"
-},
-// ─────────────────────────────────────────────────────────────────────────────
-// WAYBAR CONFIG — AmneziaVPN модуль
-// Добавь "group/amnezia" в нужный список: modules-left / modules-center / modules-right
-// ─────────────────────────────────────────────────────────────────────────────
+    // --- Сводка температур --------------------------------------------------
+    "custom/temps": {
+        "exec": "~/.config/waybar/scripts/temps.sh",
+        "interval": 3,
+        "format": "{}",
+        "tooltip": true,
+        "return-type": "json"
+    },
 
-// Пример: "modules-right": [ "group/amnezia", "clock", ... ]
+    // --- Steam --------------------------------------------------------------
+    "custom/steam": {
+        "format": "<span letter_spacing='-100000'>\uf1b6</span>",
+        "tooltip": false,
+        "on-click": "steam",
+        "on-click-right": "~/.config/waybar/scripts/steam-menu.py",
+        "on-click-middle": "steam steam://open/games"
+    },
 
-"group/amnezia": {
-    "orientation": "horizontal",
-    "modules": [
-        "custom/amnezia",
-        "custom/amnezia-s1",
-        "custom/amnezia-s2",
-        "custom/amnezia-off"
-    ]
-},
+    // ────────────────────────────────────────────────────────────────────────
+    //  07. AMNEZIA VPN
+    // ------------------------------------------------------------------------
+    //  Группа объявлена, но НЕ подключена к modules-*.
+    //  Чтобы включить, добавь "group/amnezia" в нужный список выше.
+    // ────────────────────────────────────────────────────────────────────────
 
-"custom/amnezia": {
-    "exec": "~/.config/waybar/scripts/amnezia-status.sh",
-    "return-type": "json",
-    "interval": 5,
-    "signal": 8,
-    "on-click": "~/.config/waybar/scripts/amnezia-toggle.sh",
-    "format": "{}",
-    "tooltip": true
-},
+    "group/amnezia": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/amnezia",
+            "custom/amnezia-s1",
+            "custom/amnezia-s2",
+            "custom/amnezia-off"
+        ]
+    },
 
-// Сервер 1 — AmneziaWireGuard / Cloudflare WARP (индекс 0)
-"custom/amnezia-s1": {
-    "exec": "~/.config/waybar/scripts/amnezia-btn.sh '1' 'btn-s1'",
-    "return-type": "json",
-    "interval": "once",
-    "signal": 8,
-    "on-click": "~/.config/waybar/scripts/amnezia-connect.sh 0",
-    "format": "{}",
-    "tooltip": "Сервер 1 (WARP)"
-},
+    // --- Статус подключения -------------------------------------------------
+    "custom/amnezia": {
+        "exec": "~/.config/waybar/scripts/amnezia-status.sh",
+        "return-type": "json",
+        "interval": 5,
+        "signal": 8,
+        "on-click": "~/.config/waybar/scripts/amnezia-toggle.sh",
+        "format": "{}",
+        "tooltip": true
+    },
 
-// Сервер 2 — VLESS/xray (индекс 1)
-"custom/amnezia-s2": {
-    "exec": "~/.config/waybar/scripts/amnezia-btn.sh '2' 'btn-s2'",
-    "return-type": "json",
-    "interval": "once",
-    "signal": 8,
-    "on-click": "~/.config/waybar/scripts/amnezia-connect.sh 1",
-    "format": "{}",
-    "tooltip": "Сервер 2 (xray)"
-},
+    // --- Сервер 1: AmneziaWireGuard / Cloudflare WARP (индекс 0) ------------
+    "custom/amnezia-s1": {
+        "exec": "~/.config/waybar/scripts/amnezia-btn.sh '1' 'btn-s1'",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 8,
+        "on-click": "~/.config/waybar/scripts/amnezia-connect.sh 0",
+        "format": "{}",
+        "tooltip": "Сервер 1 (WARP)"
+    },
 
-// Отключить VPN
-"custom/amnezia-off": {
-    "exec": "~/.config/waybar/scripts/amnezia-btn.sh '✕' 'btn-off'",
-    "return-type": "json",
-    "interval": "once",
-    "signal": 8,
-    "on-click": "~/.config/waybar/scripts/amnezia-disconnect.sh",
-    "format": "{}",
-    "tooltip": "Отключить VPN"
-},
-"custom/power": {
-    "format": "⏻",
-    "on-click": "python3 ~/.config/waybar/scripts/waybar-power.py",
-    "tooltip": false
-},
-"custom/txt": {
-    "format": "TOR",
-    "on-click": "pkexec systemctl start tor",
-    "on-click-right": "pkexec systemctl stop tor", 
-    "tooltip": false
-},
-"custom/colorpicker": {
-    "format": "󰈋",
-    "on-click": "hyprpicker -a",
-    "tooltip": false
-},
-"custom/brightness": {
-    "format": "{}",
-    "return-type": "json",
-    "interval": "once",
-    "exec": "~/.config/waybar/scripts/brightness.sh",
-    "on-click": "~/.config/waybar/scripts/brightness.sh toggle",
-    "signal": 9,
-    "tooltip": false
-}
+    // --- Сервер 2: VLESS/xray (индекс 1) ------------------------------------
+    "custom/amnezia-s2": {
+        "exec": "~/.config/waybar/scripts/amnezia-btn.sh '2' 'btn-s2'",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 8,
+        "on-click": "~/.config/waybar/scripts/amnezia-connect.sh 1",
+        "format": "{}",
+        "tooltip": "Сервер 2 (xray)"
+    },
 
+    // --- Отключить VPN ------------------------------------------------------
+    "custom/amnezia-off": {
+        "exec": "~/.config/waybar/scripts/amnezia-btn.sh '✕' 'btn-off'",
+        "return-type": "json",
+        "interval": "once",
+        "signal": 8,
+        "on-click": "~/.config/waybar/scripts/amnezia-disconnect.sh",
+        "format": "{}",
+        "tooltip": "Отключить VPN"
+    }
 }

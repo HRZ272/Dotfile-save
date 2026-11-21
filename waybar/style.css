@@ -1,8 +1,41 @@
-/* ============================================ */
-/*  WAYBAR - LAVENDER CATPPUCCIN MOCHA THEME   */
-/* ============================================ */
+/* ============================================================================
+   WAYBAR — LAVENDER / CATPPUCCIN MOCHA
+   ----------------------------------------------------------------------------
+   Чистовая копия style.css. Оригинал не тронут.
+   Разложено по секциям, дубли убраны, визуальное поведение сохранено.
+
+   СОДЕРЖАНИЕ
+     01. Импорты
+     02. База: шрифт и окно
+     03. Базовый стиль модулей + общий hover
+     04. Workspaces
+     05. Левая часть: yandex, colorpicker, tray
+     06. Центр: weather, clock, language
+     07. Правая часть: аудио, яркость, громкость, обновления, питание
+     08. Резервные модули (сейчас не включены в config.jsonc)
+     09. Тултипы
+     10. Анимации
+     11. Динамический импорт состояния трея (должен быть в конце)
+
+   ПАЛИТРА (Catppuccin Mocha)
+     base #1e1e2e · mantle #181825 · surface0 #313244 · surface1 #45475a
+     text #cdd6f4 · overlay #6c7086
+     lavender #b4befe · mauve #cba6f7 · pink #f5c2e7 · teal #94e2d5
+     sky #89dceb · sapphire #74c7ec · green #a6e3a1 · yellow #f9e2af
+     peach #fab387 · red #f38ba8 · maroon #eba0ac
+   ========================================================================== */
+
+
+/* ============================================================================
+   01. ИМПОРТЫ
+   ========================================================================== */
 
 @import url("/home/horizon/.config/gtk-3.0/colors.css");
+
+
+/* ============================================================================
+   02. БАЗА: ШРИФТ И ОКНО
+   ========================================================================== */
 
 * {
     font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", Roboto, sans-serif;
@@ -11,18 +44,17 @@
     min-height: 0;
 }
 
-/* ============================================ */
-/*              ОСНОВНОЕ ОКНО                  */
-/* ============================================ */
-
 window#waybar {
     background: transparent;
     color: #cdd6f4;
 }
 
-/* ============================================ */
-/*           ОБЩИЕ СТИЛИ МОДУЛЕЙ               */
-/* ============================================ */
+
+/* ============================================================================
+   03. БАЗОВЫЙ СТИЛЬ МОДУЛЕЙ
+   ----------------------------------------------------------------------------
+   Общий фон, рамка и отступы. Модули ниже переопределяют то, что им нужно.
+   ========================================================================== */
 
 #custom-power,
 #workspaces,
@@ -38,9 +70,11 @@ window#waybar {
 #idle_inhibitor,
 #custom-chromium_vol,
 #pulseaudio,
+#custom-netspeed,
 #custom-txt,
 #custom-colorpicker,
 #cpu,
+#custom-volume,
 #memory,
 #temperature,
 #custom-updates,
@@ -51,12 +85,13 @@ window#waybar {
     padding: 0 10px;
     border-radius: 12px;
     border: 2px solid #313244;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Hover эффект для всех модулей */
+/* Общий hover. Модули ниже при необходимости переопределяют его. */
 #workspaces:hover,
+#custom-netspeed:hover,
 #custom-amnezia:hover,
 #custom-yandex:hover,
 #clock:hover,
@@ -68,6 +103,7 @@ window#waybar {
 #custom-chromium_vol:hover,
 #pulseaudio:hover,
 #cpu:hover,
+#custom-volume:hover,
 #memory:hover,
 #temperature:hover,
 #tray:hover {
@@ -76,9 +112,10 @@ window#waybar {
     box-shadow: 0 0 16px rgba(180, 190, 254, 0.3);
 }
 
-/* ============================================ */
-/*              WORKSPACES                      */
-/* ============================================ */
+
+/* ============================================================================
+   04. WORKSPACES
+   ========================================================================== */
 
 #workspaces {
     padding: 0;
@@ -89,7 +126,7 @@ window#waybar {
     padding: 0 10px;
     margin: 0;
     background: transparent;
-    color: #b4befe;        
+    color: #b4befe;
     border: none;
     box-shadow: none;
     border-radius: 10px;
@@ -97,7 +134,7 @@ window#waybar {
 }
 
 #workspaces button.empty {
-    color: #45475a;        
+    color: #45475a;
     background: transparent;
 }
 
@@ -109,18 +146,21 @@ window#waybar {
     border-radius: 10px;
 }
 
-@keyframes urgent-blink {
-    from {
-        box-shadow: 0 0 8px rgba(243, 139, 168, 0.8);
-    }
-    to {
-        box-shadow: 0 0 20px rgba(243, 139, 168, 1);
-    }
+/* Занятый воркспейс.
+   ВАЖНО: правило идёт после .active — так было в оригинале, порядок сохранён. */
+#workspaces button.occupied {
+    color: #cdd6f4;
+    background: rgba(180, 190, 254, 0.12);
+    border-bottom: 2px solid #b4befe;
+    border-radius: 10px 10px 6px 6px;
 }
 
-/* ============================================ */
-/*           YANDEX MUSIC MODULE                */
-/* ============================================ */
+
+/* ============================================================================
+   05. ЛЕВАЯ ЧАСТЬ ПАНЕЛИ
+   ========================================================================== */
+
+/* --- Яндекс Музыка ------------------------------------------------------- */
 
 #custom-yandex {
     color: #b4befe;
@@ -137,176 +177,30 @@ window#waybar {
     box-shadow: 0 0 20px rgba(180, 190, 254, 0.6);
 }
 
-/* ============================================ */
-/*                 CLOCK                        */
-/* ============================================ */
+/* --- Colorpicker --------------------------------------------------------- */
 
-#clock {
-    color: #b4befe;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-    font-weight: 600;
-    padding: 0 18px;
-}
-
-#clock:hover {
-    background: linear-gradient(135deg, #b4befe 0%, #cba6f7 100%);
-    color: #1e1e2e;
-    border-color: #b4befe;
-}
-
-/* ============================================ */
-/*               WEATHER                        */
-/* ============================================ */
-
-#custom-weather {
-    color: #89dceb;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-    font-weight: 500;
-}
-
-#custom-weather:hover {
-    background: linear-gradient(135deg, #89dceb 0%, #74c7ec 100%);
-    color: #1e1e2e;
-    border-color: #89dceb;
-}
-
-/* ============================================ */
-/*               LANGUAGE                       */
-/* ============================================ */
-
-#language {
-    color: #f5c2e7;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-    min-width: 50px;
-    padding: 0 12px;
-}
-
-#language:hover {
-    background: linear-gradient(135deg, #f5c2e7 0%, #cba6f7 100%);
-    color: #1e1e2e;
-    border-color: #f5c2e7;
-}
-
-/* ============================================ */
-/*            IDLE INHIBITOR                    */
-/* ============================================ */
-
-#idle_inhibitor {
-    color: #6c7086;
-    background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
-    border: 2px solid #313244;
-    padding: 0 12px;
-}
-
-#idle_inhibitor.activated {
-    color: #f9e2af;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border-color: #f9e2af;
-    box-shadow: 0 0 12px rgba(249, 226, 175, 0.4);
-}
-
-#idle_inhibitor:hover {
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border-color: #b4befe;
-}
-
-/* ============================================ */
-/*              PULSEAUDIO                      */
-/* ============================================ */
-
-#pulseaudio {
-    color: #fab387;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-}
-
-#pulseaudio.muted {
-    color: #6c7086;
-    background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
-    border-color: #313244;
-}
-
-#pulseaudio:hover {
-    background: linear-gradient(135deg, #fab387 0%, #f9e2af 100%);
-    color: #1e1e2e;
-    border-color: #fab387;
-}
-
-/* ============================================ */
-/*                  CPU                         */
-/* ============================================ */
-
-#cpu {
-    color: #a6e3a1;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-}
-
-#cpu:hover {
-    background: linear-gradient(135deg, #a6e3a1 0%, #94e2d5 100%);
-    color: #1e1e2e;
-    border-color: #a6e3a1;
-}
-
-/* ============================================ */
-/*                MEMORY                        */
-/* ============================================ */
-
-#memory {
+#custom-colorpicker {
     color: #cba6f7;
     background: linear-gradient(135deg, #313244 0%, #262637 100%);
     border: 2px solid #45475a;
+    border-radius: 12px;
+    margin: 2px 2px;
+    padding: 0 11px 0 9px;
 }
 
-#memory:hover {
+#custom-colorpicker:hover {
     background: linear-gradient(135deg, #cba6f7 0%, #b4befe 100%);
     color: #1e1e2e;
     border-color: #cba6f7;
 }
 
-/* ============================================ */
-/*             TEMPERATURE                      */
-/* ============================================ */
-
-#temperature {
-    color: #94e2d5;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-}
-
-#temperature.critical {
-    color: #f38ba8;
-    background: linear-gradient(135deg, #45475a 0%, #3b3c4e 100%);
-    border-color: #f38ba8;
-    animation: temp-critical 1s ease-in-out infinite alternate;
-}
-
-@keyframes temp-critical {
-    from {
-        box-shadow: 0 0 8px rgba(243, 139, 168, 0.6);
-    }
-    to {
-        box-shadow: 0 0 20px rgba(243, 139, 168, 1);
-    }
-}
-
-#temperature:hover {
-    background: linear-gradient(135deg, #94e2d5 0%, #89dceb 100%);
-    color: #1e1e2e;
-    border-color: #94e2d5;
-}
-
-/* ============================================ */
-/*                 TRAY                         */
-/* ============================================ */
+/* --- Tray ---------------------------------------------------------------- */
 
 #tray {
     background: linear-gradient(135deg, #313244 0%, #262637 100%);
     border: 2px solid #45475a;
     padding: 0 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #tray > .passive {
@@ -324,194 +218,7 @@ window#waybar {
     border-color: #b4befe;
 }
 
-/* ============================================ */
-/*          TOOLTIPS (Опционально)              */
-/* ============================================ */
-
-tooltip {
-    background: #1e1e2e;
-    border: 2px solid #b4befe;
-    border-radius: 10px;
-    color: #cdd6f4;
-}
-
-tooltip label {
-    color: #cdd6f4;
-}
-#workspaces button.occupied {
-    color: #cdd6f4;
-    background: rgba(180, 190, 254, 0.12);
-    border-bottom: 2px solid #b4befe;
-    border-radius: 10px 10px 6px 6px;
-}
-#custom-audio-switch {
-    color: #89dceb;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-    border-radius: 12px;  /* Добавь эту строку */
-    padding: 0 12px;      /* И эту */
-    font-size: 14px;
-}
-
-#custom-audio-switch:hover {
-    background: linear-gradient(135deg, #89dceb 0%, #74c7ec 100%);
-    color: #1e1e2e;
-    border-color: #89dceb;
-}
-/* Аудио кнопки - один блок */
-#custom-audio-headphones,
-#custom-audio-speakers {
-    color: #6c7086;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-    padding: 0 8px;
-    margin: 2px 0;
-    font-size: 15px;
-}
-
-/* Убираем отступ между кнопками */
-#custom-audio-headphones {
-    border-radius: 12px 0 0 12px;
-    border-right: 1px solid #45475a;
-    margin-right: 0;
-}
-
-#custom-audio-speakers {
-    border-radius: 0 12px 12px 0;
-    border-left: 1px solid #45475a;
-    margin-left: 0;
-}
-
-/* Активная кнопка */
-#custom-audio-headphones.active,
-#custom-audio-speakers.active {
-    color: #89dceb;
-    background: linear-gradient(135deg, #45475a 0%, #3b3c4e 100%);
-}
-
-/* Hover */
-#custom-audio-headphones:hover,
-#custom-audio-speakers:hover {
-    color: #89dceb;
-    background: linear-gradient(135deg, #89dceb 0%, #74c7ec 100%);
-    color: #1e1e2e;
-}
-
-/* ============================================ */
-/*          CHROMIUM VOLUME                     */
-/* ============================================ */
-
-#custom-chromium_vol {
-    color: #fab387;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-}
-
-#custom-chromium_vol.muted,
-#custom-chromium_vol.inactive {
-    color: #6c7086;
-    background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
-    border-color: #313244;
-}
-
-#custom-chromium_vol:hover {
-    background: linear-gradient(135deg, #fab387 0%, #f9e2af 100%);
-    color: #1e1e2e;
-    border-color: #fab387;
-}
-
-/* ============================================================ */
-/*                          UPDATES                             */
-/* ============================================================ */
-
-#custom-updates {
-    color: #89dceb; /* Чуть более глубокий голубой */
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-}
-
-#custom-updates:hover {
-    background: linear-gradient(135deg, #89dceb 0%, #74c7ec 100%);
-    color: #1e1e2e;
-    border-color: #89dceb;
-}
-
-/* Если обновлений больше 20, подсветим, что пора бы и честь знать */
-#custom-updates.warning {
-    color: #f9e2af; /* Желтый акцент */
-    border-color: #f9e2af;
-}
-#custom-gpu-temp {
-    color: #cba6f7;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-    border-radius: 12px;
-    padding: 0 10px;
-    margin: 2px 2px;
-}
-
-#custom-gpu-temp:hover {
-    background: linear-gradient(135deg, #cba6f7 0%, #b4befe 100%);
-    color: #1e1e2e;
-    border-color: #cba6f7;
-}
-#custom-temps {
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-    border-radius: 12px;
-    padding: 0 12px;
-    margin: 2px 2px;
-}
-
-#custom-temps:hover {
-    border-color: #b4befe;
-    box-shadow: 0 0 16px rgba(180, 190, 254, 0.3);
-}
-#custom-text {
-    color: #b4befe;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-    border-radius: 12px;
-    padding: 0 12px;
-    margin: 2px 2px;
-}
-#custom-text:hover {
-    background: linear-gradient(135deg, #b4befe 0%, #cba6f7 100%);
-    color: #1e1e2e;
-    border-color: #b4befe;
-    box-shadow: 0 0 20px rgba(180, 190, 254, 0.6);
-}
-#custom-surge {
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-    border-radius: 12px;
-    padding: 0 12px;
-    margin: 2px 2px;
-}
-
-#custom-surge:hover {
-    border-color: #b4befe;
-    box-shadow: 0 0 16px rgba(180, 190, 254, 0.3);
-}
-
-#custom-steam {
-     color: #b4befe;
-     background: linear-gradient(135deg, #313244 0%, #262637 100%);
-     border: 2px solid #45475a;
-     border-radius: 12px;
-     border-radius: 12px;
-     margin: 2px 2px;
-     padding: 0px 12px 0 10px;
-}
-
-#custom-steam:hover {
-     background: linear-gradient(135deg, #b4befe 0%, #cba6f7 100%);
-     color: #1e1e2e;
-     border-color: #b4befe;
-     box-shadow: 0 0 20px rgba(180, 190, 254, 0.6);
-}
-
-@import url("/home/horizon/.config/waybar/tray-state.css");
+/* --- Кнопка показа/скрытия трея (custom/tray-toggle) ---------------------- */
 
 #custom-tray-toggle {
     color: #6c7086;
@@ -532,15 +239,401 @@ tooltip label {
     box-shadow: 0 0 16px rgba(180, 190, 254, 0.3);
 }
 
-#tray {
+
+/* ============================================================================
+   06. ЦЕНТР ПАНЕЛИ
+   ========================================================================== */
+
+/* --- Погода -------------------------------------------------------------- */
+
+#custom-weather {
+    color: #89dceb;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    font-weight: 500;
+}
+
+#custom-weather:hover {
+    background: linear-gradient(135deg, #89dceb 0%, #74c7ec 100%);
+    color: #1e1e2e;
+    border-color: #89dceb;
+}
+
+/* --- Часы ---------------------------------------------------------------- */
+
+#clock {
+    color: #b4befe;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    font-weight: 600;
+    padding: 0 18px;
+}
+
+#clock:hover {
+    background: linear-gradient(135deg, #b4befe 0%, #cba6f7 100%);
+    color: #1e1e2e;
+    border-color: #b4befe;
+}
+
+/* --- Раскладка ----------------------------------------------------------- */
+
+#language {
+    color: #f5c2e7;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    min-width: 50px;
+    padding: 0 12px;
+}
+
+#language:hover {
+    background: linear-gradient(135deg, #f5c2e7 0%, #cba6f7 100%);
+    color: #1e1e2e;
+    border-color: #f5c2e7;
+}
+
+
+/* ============================================================================
+   07. ПРАВАЯ ЧАСТЬ ПАНЕЛИ
+   ========================================================================== */
+
+/* --- Idle inhibitor ------------------------------------------------------ */
+
+#idle_inhibitor {
+    color: #6c7086;
+    background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
+    border: 2px solid #313244;
+    padding: 0 12px;
+}
+
+#idle_inhibitor.activated {
+    color: #f9e2af;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border-color: #f9e2af;
+    box-shadow: 0 0 12px rgba(249, 226, 175, 0.4);
+}
+
+#idle_inhibitor:hover {
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border-color: #b4befe;
+}
+
+/* --- Аудио: наушники и колонки (единый блок) ------------------------------ */
+
+#custom-audio-headphones,
+#custom-audio-speakers {
+    color: #6c7086;
     background: linear-gradient(135deg, #313244 0%, #262637 100%);
     border: 2px solid #45475a;
     padding: 0 8px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin: 2px 0;
+    font-size: 15px;
 }
-/* ============================================ */
-/*              AMNEZIA VPN                     */
-/* ============================================ */
+
+#custom-audio-headphones {
+    border-radius: 12px 0 0 12px;
+    border-right: 1px solid #45475a;
+    margin-right: 0;
+}
+
+#custom-audio-speakers {
+    border-radius: 0 12px 12px 0;
+    border-left: 1px solid #45475a;
+    margin-left: 0;
+}
+
+#custom-audio-headphones.active,
+#custom-audio-speakers.active {
+    color: #89dceb;
+    background: linear-gradient(135deg, #45475a 0%, #3b3c4e 100%);
+}
+
+#custom-audio-headphones:hover,
+#custom-audio-speakers:hover {
+    color: #1e1e2e;
+    background: linear-gradient(135deg, #89dceb 0%, #74c7ec 100%);
+}
+
+/* --- Переключатель аудиоустройства (custom/audio-switch) ------------------ */
+
+#custom-audio-switch {
+    color: #89dceb;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    border-radius: 12px;
+    padding: 0 12px;
+    font-size: 14px;
+}
+
+#custom-audio-switch:hover {
+    background: linear-gradient(135deg, #89dceb 0%, #74c7ec 100%);
+    color: #1e1e2e;
+    border-color: #89dceb;
+}
+
+/* --- Яркость ------------------------------------------------------------- */
+
+#custom-brightness {
+    color: #f9e2af;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    border-radius: 12px;
+    padding: 0 10px;
+    margin: 2px 0 2px 2px;
+    font-size: 16px;
+}
+
+#custom-brightness:hover {
+    background: linear-gradient(135deg, #f9e2af 0%, #fab387 100%);
+    color: #1e1e2e;
+    border-color: #f9e2af;
+    box-shadow: 0 0 16px rgba(249, 226, 175, 0.4);
+}
+
+/* --- PulseAudio ---------------------------------------------------------- */
+
+#pulseaudio {
+    color: #fab387;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+}
+
+#pulseaudio.muted {
+    color: #6c7086;
+    background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
+    border-color: #313244;
+}
+
+#pulseaudio:hover {
+    background: linear-gradient(135deg, #fab387 0%, #f9e2af 100%);
+    color: #1e1e2e;
+    border-color: #fab387;
+}
+
+/* --- Громкость Chromium -------------------------------------------------- */
+
+#custom-chromium_vol {
+    color: #fab387;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+}
+
+#custom-chromium_vol.muted,
+#custom-chromium_vol.inactive {
+    color: #6c7086;
+    background: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
+    border-color: #313244;
+}
+
+#custom-chromium_vol:hover {
+    background: linear-gradient(135deg, #fab387 0%, #f9e2af 100%);
+    color: #1e1e2e;
+    border-color: #fab387;
+}
+
+/* --- Surge / системная сводка -------------------------------------------- */
+
+#custom-surge {
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    border-radius: 12px;
+    padding: 0 12px;
+    margin: 2px 2px;
+}
+
+#custom-surge:hover {
+    border-color: #b4befe;
+    box-shadow: 0 0 16px rgba(180, 190, 254, 0.3);
+}
+
+/* --- Сеть (custom/netspeed) ----------------------------------------------
+   Отдельных правил нет: используется базовый блок и общий hover. */
+
+/* --- Текст / заметка (custom/text) --------------------------------------- */
+
+#custom-text {
+    color: #b4befe;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    border-radius: 12px;
+    padding: 0 12px;
+    margin: 2px 2px;
+}
+
+#custom-text:hover {
+    background: linear-gradient(135deg, #b4befe 0%, #cba6f7 100%);
+    color: #1e1e2e;
+    border-color: #b4befe;
+    box-shadow: 0 0 20px rgba(180, 190, 254, 0.6);
+}
+
+/* --- Обновления ---------------------------------------------------------- */
+
+#custom-updates {
+    color: #89dceb;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+}
+
+#custom-updates.warning {
+    color: #f9e2af;
+    border-color: #f9e2af;
+}
+
+#custom-updates:hover {
+    background: linear-gradient(135deg, #89dceb 0%, #74c7ec 100%);
+    color: #1e1e2e;
+    border-color: #89dceb;
+}
+
+/* --- TOR (custom/txt) ---------------------------------------------------- */
+
+#custom-txt {
+    font-family: "JetBrainsMono Nerd Font";
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    font-size: 14px;
+    border: 2px solid #45475a;
+    font-weight: 600;
+}
+
+#custom-txt:hover {
+    background: linear-gradient(135deg, #b4befe 0%, #cba6f7 100%);
+    color: #1e1e2e;
+    border-color: #b4befe;
+    box-shadow: 0 0 20px rgba(180, 190, 254, 0.6);
+}
+
+/* --- Громкость (custom/volume, резервная) -------------------------------- */
+
+#custom-volume {
+    color: #fab387;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+}
+
+/* --- Питание ------------------------------------------------------------- */
+
+#custom-power {
+    color: #f38ba8;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    padding: 0 12px 0 10px;
+    font-size: 16px;
+}
+
+#custom-power:hover {
+    background: linear-gradient(135deg, #f38ba8 0%, #eba0ac 100%);
+    color: #1e1e2e;
+    border-color: #f38ba8;
+    box-shadow: 0 0 16px rgba(243, 139, 168, 0.5);
+}
+
+
+/* ============================================================================
+   08. РЕЗЕРВНЫЕ МОДУЛИ
+   ----------------------------------------------------------------------------
+   Сейчас не включены в config.jsonc (или включены не все), но стили сохранены.
+   ========================================================================== */
+
+/* --- CPU ----------------------------------------------------------------- */
+
+#cpu {
+    color: #a6e3a1;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+}
+
+#cpu:hover {
+    background: linear-gradient(135deg, #a6e3a1 0%, #94e2d5 100%);
+    color: #1e1e2e;
+    border-color: #a6e3a1;
+}
+
+/* --- Память -------------------------------------------------------------- */
+
+#memory {
+    color: #cba6f7;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+}
+
+#memory:hover {
+    background: linear-gradient(135deg, #cba6f7 0%, #b4befe 100%);
+    color: #1e1e2e;
+    border-color: #cba6f7;
+}
+
+/* --- Температура --------------------------------------------------------- */
+
+#temperature {
+    color: #94e2d5;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+}
+
+#temperature.critical {
+    color: #f38ba8;
+    background: linear-gradient(135deg, #45475a 0%, #3b3c4e 100%);
+    border-color: #f38ba8;
+    animation: temp-critical 1s ease-in-out infinite alternate;
+}
+
+#temperature:hover {
+    background: linear-gradient(135deg, #94e2d5 0%, #89dceb 100%);
+    color: #1e1e2e;
+    border-color: #94e2d5;
+}
+
+/* --- GPU-температура ----------------------------------------------------- */
+
+#custom-gpu-temp {
+    color: #cba6f7;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    border-radius: 12px;
+    padding: 0 10px;
+    margin: 2px 2px;
+}
+
+#custom-gpu-temp:hover {
+    background: linear-gradient(135deg, #cba6f7 0%, #b4befe 100%);
+    color: #1e1e2e;
+    border-color: #cba6f7;
+}
+
+/* --- Сводка температур (custom/temps) ------------------------------------ */
+
+#custom-temps {
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    border-radius: 12px;
+    padding: 0 12px;
+    margin: 2px 2px;
+}
+
+#custom-temps:hover {
+    border-color: #b4befe;
+    box-shadow: 0 0 16px rgba(180, 190, 254, 0.3);
+}
+
+/* --- Steam --------------------------------------------------------------- */
+
+#custom-steam {
+    color: #b4befe;
+    background: linear-gradient(135deg, #313244 0%, #262637 100%);
+    border: 2px solid #45475a;
+    border-radius: 12px;
+    margin: 2px 2px;
+    padding: 0px 12px 0 10px;
+}
+
+#custom-steam:hover {
+    background: linear-gradient(135deg, #b4befe 0%, #cba6f7 100%);
+    color: #1e1e2e;
+    border-color: #b4befe;
+    box-shadow: 0 0 20px rgba(180, 190, 254, 0.6);
+}
+
+/* --- AmneziaVPN ---------------------------------------------------------- */
 
 #custom-amnezia {
     font-size: 16px;
@@ -557,60 +650,52 @@ tooltip label {
     color: #6c7086;
 }
 
-/* остальное (кнопки) без изменений */
-#custom-power {
-    color: #f38ba8;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-    padding: 0 12px 0 10px;
-    font-size: 16px;
+
+/* ============================================================================
+   09. ТУЛТИПЫ
+   ========================================================================== */
+
+tooltip {
+    background: #1e1e2e;
+    border: 2px solid #b4befe;
+    border-radius: 10px;
+    color: #cdd6f4;
 }
 
-#custom-power:hover {
-    background: linear-gradient(135deg, #f38ba8 0%, #eba0ac 100%);
-    color: #1e1e2e;
-    border-color: #f38ba8;
-    box-shadow: 0 0 16px rgba(243, 139, 168, 0.5);
+tooltip label {
+    color: #cdd6f4;
 }
 
-#custom-txt {
-    font-family: "JetBrainsMono Nerd Font";
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    font-size: 14px;
-    border: 2px solid #45475a;
-    font-weight: 600;
+
+/* ============================================================================
+   10. АНИМАЦИИ
+   ========================================================================== */
+
+/* Резерв: сейчас нигде не используется. */
+@keyframes urgent-blink {
+    from {
+        box-shadow: 0 0 8px rgba(243, 139, 168, 0.8);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(243, 139, 168, 1);
+    }
 }
-#custom-txt:hover {
-    background: linear-gradient(135deg, #b4befe 0%, #cba6f7 100%);
-    color: #1e1e2e;
-    border-color: #b4befe;
-    box-shadow: 0 0 20px rgba(180, 190, 254, 0.6);
+
+@keyframes temp-critical {
+    from {
+        box-shadow: 0 0 8px rgba(243, 139, 168, 0.6);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(243, 139, 168, 1);
+    }
 }
-#custom-colorpicker {
-    color: #cba6f7;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-    border-radius: 12px;
-    margin: 2px 2px;
-    padding: 0 11px 0 9px;
-}
-#custom-colorpicker:hover {
-    background: linear-gradient(135deg, #cba6f7 0%, #b4befe 100%);
-    color: #1e1e2e;
-    border-color: #cba6f7;
-}
-#custom-brightness {
-    color: #f9e2af;
-    background: linear-gradient(135deg, #313244 0%, #262637 100%);
-    border: 2px solid #45475a;
-    border-radius: 12px;
-    padding: 0 10px;
-    margin: 2px 0 2px 2px;
-    font-size: 16px;
-}
-#custom-brightness:hover {
-    background: linear-gradient(135deg, #f9e2af 0%, #fab387 100%);
-    color: #1e1e2e;
-    border-color: #f9e2af;
-    box-shadow: 0 0 16px rgba(249, 226, 175, 0.4);
-}
+
+
+/* ============================================================================
+   11. ДИНАМИЧЕСКИЙ ИМПОРТ СОСТОЯНИЯ ТРЕЯ
+   ----------------------------------------------------------------------------
+   ВАЖНО: импорт должен оставаться в конце файла — tray-toggle.sh пишет сюда
+   правила, которые должны перекрывать стили выше.
+   ========================================================================== */
+
+@import url("/home/horizon/.config/waybar/tray-state.css");

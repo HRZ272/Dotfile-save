@@ -1,115 +1,121 @@
+
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    // Text logo
-    // "logo": {
-    //   "source": "~/.config/fastfetch/arch.txt",
-    // "type": "file",
-    // "padding": {
-    //   "top": 1,
-    // "right": 0,
-    // "left": 0
-    //  }
-    //},
-    // Image logo
-     "logo": {
-         "source": "~/.config/fastfetch/cachy.jpg",
-         "recache": true,
-         "type": "auto",
-         "height": 15,
-         "preserveAspectRatio": true,
-         "padding": {
-             "top": 0,
-             "right": 2,
-             "left": 1
-         }
-     },
+
+    "logo": {
+        "source": "~/.config/fastfetch/cachy.png",
+        "cache": "regen",
+        "type": "auto",
+        "height": 15,
+        "preserveAspectRatio": true,
+        "padding": {
+            "top": 0,
+            "right": 2,
+            "left": 1
+        }
+    },
+
     "display": {
         "separator": " "
     },
+
     "modules": [
         {
             "type": "title",
-            "outputColor": "white",
-            "format": "\u001b[90m┌────────────────────────────────────────────┐"
+            "outputColor": "bright_magenta",
+            "format": "\u001b[38;2;105;75;155m┌────────────────────────────────────────────┐"
         },
         {
             "type": "host",
             "key": " Host",
-            "keyColor": "green",
+            "keyColor": "#A879E8",
+            "outputColor": "#D5C4FF",
             "format": "{name}"
         },
         {
             "type": "display",
             "key": "│󰹑 Display",
-            "keyColor": "green",
+            "keyColor": "#A879E8",
+            "outputColor": "#C7B1FF",
             "format": "{name} {width}x{height} @ {refresh-rate}Hz {inch}″"
         },
         {
             "type": "cpu",
             "key": "│󰻠 CPU",
-            "keyColor": "green",
+            "keyColor": "#A879E8",
+            "outputColor": "#D5C4FF",
             "format": "{name}"
         },
         {
             "type": "gpu",
             "key": "│󰍛 GPU",
-            "keyColor": "green",
+            "keyColor": "#A879E8",
+            "outputColor": "#C7B1FF",
             "format": "{vendor} {name}"
         },
         {
             "type": "memory",
             "key": "│󰘚 RAM",
-            "keyColor": "green"
+            "keyColor": "#A879E8",
+            "outputColor": "#D5C4FF"
         },
         {
             "type": "disk",
             "key": "│󰋊 Disk",
-            "keyColor": "green",
+            "keyColor": "#A879E8",
+            "outputColor": "#C7B1FF",
             "format": "{size-used} / {size-total} ({size-percentage}) {filesystem}"
         },
         {
             "type": "custom",
-            "format": "\u001b[90m├────────────────────────────────────────────┤"
+            "format": "\u001b[38;2;105;75;155m├────────────────────────────────────────────┤"
         },
         {
             "type": "os",
             "key": "󰌽 OS",
-            "keyColor": "yellow"
+            "keyColor": "#B58AFF",
+            "outputColor": "#E0D0FF"
         },
         {
             "type": "de",
             "key": "│ DE",
-            "keyColor": "yellow"
+            "keyColor": "#B58AFF",
+            "outputColor": "#D5C4FF"
         },
         {
             "type": "wm",
             "key": "│ WM",
-            "keyColor": "yellow"
+            "keyColor": "#B58AFF",
+            "outputColor": "#D5C4FF"
         },
         {
             "type": "kernel",
             "key": "│ Kernel",
-            "keyColor": "yellow"
+            "keyColor": "#B58AFF",
+            "outputColor": "#E0D0FF"
         },
         {
             "type": "packages",
             "key": "│󰏖 Packages",
-            "keyColor": "yellow"
+            "keyColor": "#B58AFF",
+            "outputColor": "#D5C4FF"
         },
         {
             "type": "shell",
             "key": "│ Shell",
-            "keyColor": "yellow"
+            "keyColor": "#B58AFF",
+            "outputColor": "#E0D0FF"
         },
         {
             "type": "command",
             "key": "│ Age",
-            "keyColor": "yellow",
+            "keyColor": "#B58AFF",
+            "outputColor": "#D5C4FF",
             "text": "echo $((($(date +%s) - $(stat -c %W /)) / 86400)) days"
         },
         {
             "type": "title",
-            "format": "\u001b[90m└────────────────────────────────────────────┘"
+            "format": "\u001b[38;2;105;75;155m└────────────────────────────────────────────┘"
         }
     ]
 }

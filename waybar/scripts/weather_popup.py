@@ -91,7 +91,7 @@ class WeatherApp(tk.Tk):
         self.resizable(False, False)
 
         # Позиция: сразу под Waybar, по центру
-        sw = self.winfo_screenwidth()
+        sw = 1920
         x  = (sw - WIN_W) // 2
         y  = WAYBAR_HEIGHT + 4
         self.geometry(f"{WIN_W}x{WIN_H}+{x}+{y}")

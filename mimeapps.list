@@ -1,7 +1,12 @@
 [Added Associations]
 video/mp4=mpv-3.desktop;mpv-2.desktop;
+x-scheme-handler/tg=userapp-AyuGram Desktop-FKEFW3.desktop;
+x-scheme-handler/tonsite=userapp-AyuGram Desktop-OEWHW3.desktop;
 
 [Default Applications]
 video/mp4=mpv-3.desktop;
 application/x-ms-dos-executable;application/x-wine-extension-msp;application/x-msi;application/x-msdos-program;text/win-bat;=PortProton.desktop
 x-scheme-handler/discord=legcord.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/tg=userapp-AyuGram Desktop-FKEFW3.desktop
+x-scheme-handler/tonsite=userapp-AyuGram Desktop-OEWHW3.desktop
