@@ -1,9 +1,9 @@
 # Dotfile-save 
 
 ![screenshot](screenshot.png)
-![screenshot](screenshot1.png)
+![screenshot](screenshot2.png)
 
-Это мои личные dotfiles под Hyprland.  
+Это мои личные доты под Hyprland.  
 Конфиг сильно заточен под моё железо — часть биндов и скриптов может не работать у вас.  
 
 - **Hyprland** — оконный менеджер
