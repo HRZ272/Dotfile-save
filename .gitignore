@@ -121,3 +121,5 @@ Pinta/addins/
 *.sqlite
 *.vscdb*
 Happ.conf
+libreoffice/4/user/config/
+libreoffice/4/user/pack/
